@@ -1,8 +1,8 @@
 {
-  "name": "Informador de Caicó · Cidade Educadora",
-  "short_name": "Informador Caicó",
-  "description": "Agente de IA trilíngue (pt-BR, es, en) sobre a oferta educacional de Caicó (RN). Voz, letra ampliável e instalável.",
-  "id": "/caico/",
+  "name": "Informador de Natal · Cidade Educadora",
+  "short_name": "Informador Natal",
+  "description": "Agente de IA trilíngue (pt-BR, es, en) sobre a oferta educacional de Natal (RN). Voz, letra ampliável e instalável.",
+  "id": "/natal/",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
