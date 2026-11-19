@@ -1,0 +1,557 @@
+# OFERTA EDUCACIONAL DE CAICÓ (RN) — BASE DE CONHECIMENTO DO AGENTE
+# Código IBGE: 2402006 · UF: Rio Grande do Norte (RN) · Mesorregião: Central Potiguar / Seridó Ocidental
+# Atualizada em: 2026-11-17 · Idioma da base: Português (BR)
+# Fontes principais: Prefeitura/SEME Caicó, IBGE, Inep/MEC, UFRN, UERN, IFRN
+#
+# ===================== REGRAS OBRIGATÓRIAS PARA O AGENTE =====================
+# 1. Responda APENAS com informações desta base. NUNCA invente cifras,
+#    telefones, endereços, datas ou preços.
+# 2. Sempre que citar um dado, indique ANO, REDE DE ENSINO (municipal /
+#    estadual / federal / privada / pública / total) e FONTE.
+# 3. Se a informação não estiver nesta base ou estiver na Seção 10 (lacunas),
+#    responda "não disponível nesta base" e oriente o cidadão às fontes
+#    primárias da Seção 12 (portais oficiais).
+# 4. NÃO misture séries incompatíveis (redes ou anos diferentes, ver Seção 9).
+# 5. Para calendários, prazos e valores, indique SEMPRE o ano de referência.
+# 6. Responda no idioma da pergunta (português, espanhol ou inglês).
+# 7. Seja cordial e objetivo; respostas curtas, em linguagem simples.
+# 8. Fora do tema educação de Caicó (saúde, política, clima etc.): recuse
+#    educadamente e redirecione para a oferta educacional do município.
+# 9. ATENÇÃO: esta base é de 2026-11-17. Editais, vagas e resultados podem
+#    ter mudado; para dados em tempo real, oriente os portais vivos da Seção 12.
+#
+# ============ ETIQUETAS DE CONFIANÇA USADAS NESTA BASE ============
+# [ALTA]  : dado lido diretamente em fonte oficial/primária (IBGE, Inep/MEC,
+#           UFRN, UERN, IFRN, Prefeitura de Caicó).
+# [MEDIA] : fonte secundária (imprensa regional, agregador) que cita dado
+#           oficial; ou fonte primária cujo contexto exato precisa confirmação.
+# [BAIXA] : dado ambiguo, de ano incerto, de agregadores comerciais ou sem
+#           contraste com fontes oficiais.
+#
+# ============ LIMITAÇÃO TÉCNICA DA COMPILAÇÃO ============
+# Os portais IBGE Cidades, QEdu e Inep aplicam bloqueios anti-bot; algumas
+# cifras provêm de fragmentos indexados (snippets) e devem ser verificadas na
+# fonte primária antes de ser citadas em relatórios formais.
+
+## 1. CONTEXTO DEMOGRÁFICO, TERRITORIAL E SOCIOECONÔMICO
+Caicó é o principal polo urbano, econômico e educativo do Seridó Potiguar,
+no interior do Rio Grande do Norte (~280 km de Natal). Seu ecossistema
+educacional atende também estudantes de municípios vizinhos do RN e da Paraíba.
+Fonte principal: IBGE Cidades (cidades.ibge.gov.br/brasil/rn/caico/panorama).
+
+| Indicador | Valor | Ano | Confiança |
+| População (Censo Demográfico) | 61.146 habitantes | 2022 | [ALTA] |
+| População estimada | 63.338 habitantes | 2025/2026 (fragmentos divergem) | [MEDIA] |
+| Área territorial | 1.228,583 km² | 2025 | [ALTA] |
+| Densidade demográfica | 49,77 hab/km² | 2022 | [ALTA] |
+| Posição no RN (população/densidade) | 8.º / 57.º de 167 municípios | 2022 | [ALTA] |
+| Posição no RN (área territorial) | 5.º de 167 municípios | 2025 | [ALTA] |
+| IDHM | 0,710 (Alto) | 2010 | [ALTA] |
+| População com renda per capita <= 1/2 salário mínimo | 37,9 % | 2010 | [ALTA] |
+| Salário médio mensal (trabalhadores formais) | 1,7 salários mínimos | 2023 | [ALTA] |
+| População quilombola / indígena | 15 / 53 pessoas | 2022 | [ALTA] |
+| Prefeito | Judas Tadeu Alves dos Santos | mandato 2025-2028 [MEDIA no mandato] | [ALTA] nome |
+
+Observação [MEDIA]: comunicação acadêmica aponta retração da população jovem
+em Caicó nos últimos ~15 anos (static.even3.com/anais/1250240.pdf).
+
+## 2. ESTRUTURA NORMATIVA DA EDUCAÇÃO BÁSICA NO BRASIL
+Conforme a LDB (Lei n.º 9.394/1996) e a BNCC, a Educação Básica obrigatória
+cobre dos 4 aos 17 anos:
+1. Educação Infantil (0 a 5 anos):
+   - Creche (0 a 3 anos): etapa não obrigatória para as famílias, oferta
+     obrigatória do município conforme demanda.
+   - Pré-escola (4 a 5 anos): OBRIGATÓRIA por lei. Competência prioritária do Município.
+2. Ensino Fundamental (6 a 14 anos, 9 anos, obrigatório):
+   - Anos Iniciais (1.º ao 5.º ano / 6 a 10 anos): competência prioritária do Município.
+   - Anos Finais (6.º ao 9.º ano / 11 a 14 anos): competência compartilhada Município/Estado.
+3. Ensino Médio (15 a 17 anos, 3 anos, obrigatório):
+   - Regular, tempo integral e técnico integrado. Competência prioritária do
+     Estado (Governo do RN) e da Rede Federal (IFRN).
+
+## 3. RESULTADOS EDUCATIVOS E INDICADORES OFICIAIS
+### 3.1 Escolarização
+- Taxa de escolarização de 6 a 14 anos: 98,92 % (Censo IBGE 2022) [ALTA].
+
+### 3.2 Ideb (Índice de Desenvolvimento da Educação Básica)
+Definição: média das notas padronizadas do Saeb (Língua Portuguesa e
+Matemática) multiplicada pela taxa de aprovação do Censo Escolar (escala 0-10,
+divulgação bienal). Resultados do Ideb 2025 divulgados em 05/08/2026.
+
+| Edição | Etapa | Rede | Valor | Fonte | Confiança |
+| 2019 | Anos Iniciais | Pública | 5,1 (meta 4,9 alcançada) | qedu.org.br/cidade/5409-caico/ideb | [MEDIA] |
+| 2023 | Anos Iniciais | Pública | 5,4 | cidades.ibge.gov.br (panorama) | [ALTA] |
+| 2023 | Anos Finais | Pública | 4,2 | cidades.ibge.gov.br (panorama) | [ALTA] |
+| 2025 | Anos Iniciais | Municipal | 5,8 | agorarn.com.br (reproduz tabela Inep) | [ALTA] |
+| 2025 | Anos Iniciais | Não especificada | 5,9 (aprendizagem 5,95 x fluxo 0,98) | qedu.org.br (fragmento) | [BAIXA] |
+| 2025 | Anos Finais | — | não encontrado | — | — |
+| 2025 | Ensino Médio | — | não encontrado | — | — |
+
+AVISO METODOLÓGICO: o dado 2023 (5,4, IBGE) é da REDE PÚBLICA total, enquanto
+o dado 2025 (5,8, Agora RN) é da REDE MUNICIPAL exclusivamente. Não são
+diretamente comparáveis para calcular evolução percentual.
+
+### 3.3 Comparativa regional — Ideb 2025 (Anos Iniciais, rede municipal)
+Ranking dos 15 maiores municípios do RN: Mossoró 6,1 · Apodi 5,9 · Caicó 5,8 ·
+Currais Novos 5,8 · Parnamirim 5,1 · São José de Mipibu 5,1 · Extremoz 5,0 ·
+Nova Cruz 5,0 · Macaíba 4,9 · Assú 4,8 · Natal 4,8 · Santa Cruz 4,8 · São
+Gonçalo do Amarante 4,7 · João Câmara 4,6 · Ceará-Mirim 4,4 [ALTA/MEDIA].
+Maiores notas do RN 2025 (Seridó / 10.ª DIREC): Ipueira 7,3; Ouro Branco 6,9;
+Cruzeta 6,8; São João do Sabugi 6,8; Jaçanã 6,6.
+Médias de referência Ideb 2025 [MEDIA]:
+- RN (Anos Iniciais, rede municipal): 5,5.
+- Brasil (Anos Iniciais): 6,0 (2023) -> 6,3 (2025) [total]; redes municipais 5,8 -> 6,1.
+- Brasil (Anos Finais): 5,0 (2023) -> 5,3 (2025) [total]; redes municipais 4,6 -> 4,9.
+- Brasil (Ensino Médio): 4,3 (2023) -> 4,5 (2025) [total].
+
+### 3.4 Alfabetização e ICA (Indicador Criança Alfabetizada)
+População de 15 anos ou mais (Censo IBGE 2022):
+- Taxa de alfabetização de Caicó: 88,92 % [MEDIA] (reproduzida pela imprensa
+  a partir do IBGE: saibamais.jor.br, 05/2024).
+- Taxa de analfabetismo implícita: 11,08 % (100 - 88,92; cálculo próprio) [MEDIA].
+- Contexto no RN (Censo 2022): Parnamirim 94,91 %; Natal 93,36 %; Extremoz
+  91,38 %; Mossoró 89,96 %; São Gonçalo do Amarante 89,82 %; Caicó 88,92 %.
+- Referência Brasil (Censo 2022): alfabetização 93,0 % / analfabetismo 7,0 % [ALTA].
+ICA (% alfabetizado ao final do 2.º ano):
+- Brasil: 56 % (2023) -> 59,2 % (2024) [ALTA].
+- Rio Grande do Norte: 37 % (2023) -> 39 % (2024); metas: 44 % (2024),
+  51 % (2025), 80 % (2030) [ALTA].
+- Caicó (ICA): dado municipal NÃO encontrado nesta compilação (consultar Inep/
+  QEdu; o Inep divulgou resultados municipais em 31/03/2026).
+
+### 3.5 Gasto educativo (histórico)
+- Agregador Meu Município (meumunicipio.org.br, exercício ~2019): gasto médio
+  de R$ 7.079,76 por aluno (32 escolas municipais, 5.119 matrículas) [BAIXA:
+  ano exato do cálculo não confirmado].
+
+## 4. OFERTA ESCOLAR — CENSO ESCOLAR 2025 (Inep/QEdu)
+Fonte principal: qedu.org.br/municipio/2402006-caico [MEDIA: extraído de
+fragmentos; ver inconsistências na Seção 9].
+
+### 4.1 Escolas por dependência administrativa (Censo Escolar 2025)
+Total: 60 escolas | Federal: 1 (IFRN) | Estadual: 14 | Municipal: 31 | Privada: 14 | Rede pública: 46.
+
+### 4.2 Resumo da rede pública (QEdu 2025)
+- Escolas públicas: 46 | Matrículas (etapas regulares): 6.347 | Professores: 421 [MEDIA].
+- Nota: 6.347 = 2.245 (Anos Iniciais) + 2.057 (Anos Finais) + 2.045 (Ensino
+  Médio); a soma exclui Educação Infantil, EJA e Educação Especial.
+
+### 4.3 Matrículas por etapa (Censo Escolar 2025)
+| Etapa | Matrículas | Detalhe | Confiança |
+| Pré-escola (4-5 anos) | 776 | Creche 0-3 anos sem cifra extraída (primeirainfanciaemdados.org.br/municipios/caico-rn/) | [MEDIA] |
+| Fund. — Anos Iniciais | 2.245 | 1.º: 385 · 2.º: 450 · 3.º: 417 · 4.º: 494 · 5.º: 499 | [MEDIA] |
+| Fund. — Anos Finais | 2.057 | 6.º: 583 · 7.º: 492 · 8.º: 501 · 9.º: 481 | [MEDIA] |
+| Ensino Médio | 2.045 | 1.º: 707 · 2.º: 628 · 3.º: 548 (soma dos anos = 1.883; diferença de 162 sem explicar, ver Seção 9) | [MEDIA] |
+| EJA | 722 | Alfabetização, Fundamental e Médio noturno/acelerado | [MEDIA] |
+| Educação Especial | 437 | Atendimento em classes regulares (AEE) e escola especializada (APAE) | [MEDIA] |
+
+### 4.4 Contexto estadual do Censo Escolar 2025 (RN)
+- No RN, as matrículas da educação básica caíram -3,4 % entre 2024 (783.190) e
+  2025 (756.434): rede estadual 196.764 -> 182.461; redes municipais 412.035 ->
+  392.208; rede privada 157.325 -> 167.393 (+6,4 %) [MEDIA].
+
+### 4.5 CALENDÁRIO ESCOLAR 2025 (Censo Escolar/Inep, datas oficiais por escola) [ALTA]
+- Rede municipal: 30 escolas iniciaram em 06/02/2025 (1 em 11/02/2025); término
+  entre 18/12/2025 (21 escolas) e 29/12/2025.
+- Rede estadual: 13 escolas iniciaram em 10/02/2025; o CE José Augusto (EETIJA)
+  iniciou em 17/02/2025; términos variados entre 12/12/2025 e 15/01/2026
+  (CEJA Senador Guerra: 10/02/2025 a 22/12/2025; CE José Augusto: 17/02/2025 a
+  14/01/2026).
+- Rede federal (IFRN Campus Caicó): 07/04/2025 a 10/02/2026 (calendário
+  semestral próprio do IFRN).
+- AVISO: datas de 2025, para referência histórica. O calendário do ano letivo
+  vigente muda a cada ano; confirmar sempre o atual na Secretaria.
+
+### 4.6 DOCENTES (Tabela Docente do Censo Escolar 2025, soma de QT_DOC_BAS) [ALTA]
+- Totais por rede: Estadual 243 · Municipal 387 · Federal 51 (IFRN) ·
+  Privada 367. Total geral: 1.048 docentes; rede pública: 681.
+- Docentes por etapa: Educação Infantil: 165 (mun) + 77 (priv); Anos Iniciais:
+  20 (est) + 113 (mun) + 126 (priv); Anos Finais: 101 (est) + 107 (mun) +
+  120 (priv); Ensino Médio: 108 (est) + 51 (fed/IFRN) + 92 (priv); EJA:
+  71 (est, CEJA e escolas estaduais) + 8 (mun).
+- Perfil da rede pública (681 docentes): 490 mulheres e 191 homens; 661 com
+  superior completo (97 %); 509 com pós-graduação; vínculo: 322 concursados,
+  356 contrato temporário e 3 terceirizados.
+- ATENÇÃO: os docentes de Educação Especial/AEE somam 706 em todo o município
+  porque um mesmo docente AEE conta em cada escola onde atende; NÃO usar como
+  número de docentes únicos (ver Seção 9, item 11).
+
+### 4.7 INFRAESTRUTURA ESCOLAR (61 escolas em funcionamento, Censo 2025) [ALTA]
+- Internet: 100 % das escolas (61/61, todas as redes).
+- Biblioteca ou sala de leitura: federal 1/1 · estadual 13/14 · municipal 6/31 ·
+  privada 11/15.
+- Laboratório de informática: federal 1/1 · estadual 7/14 · municipal 13/31 ·
+  privada 7/15.
+- Quadra de esportes: federal 1/1 · estadual 5/14 · municipal 3/31 · privada 9/15.
+- Rampas de acessibilidade: federal 1/1 · estadual 7/14 · municipal 24/31 ·
+  privada 14/15.
+- Salas utilizadas no município: 628 ao todo (federal 17 · estadual 166 ·
+  municipal 209 · privada 236).
+- Oferta de creche (0-3 anos): 15 escolas municipais e 9 privadas. Oferta de
+  pré-escola (4-5 anos): 19 municipais e 13 privadas (nenhuma estadual).
+
+## 5. ANÁLISE DETALHADA POR NÍVEIS DA EDUCAÇÃO BÁSICA
+
+### 5.1 Educação Infantil (0 a 5 anos)
+- Enfoque pedagógico: desenvolvimento integral nos eixos da BNCC (interações e
+  brincadeiras). Alimentação escolar supervisionada por nutricionistas sob o
+  PNAE (2 a 4 refeições diárias, produtos da agricultura familiar do Seridó).
+- Gestão de vagas: a Prefeitura de Caicó publica convocatórias anuais de
+  matrícula e vagas remanescentes (caico.rn.gov.br/informa/1479) [ALTA].
+- Centros municipais exclusivos (creches e EMEIs) [ALTA/MEDIA]:
+  CEMEI Dona Oscarina de Oliveira Torres (Bairro Paraíba) · Creche Municipal
+  Gente Feliz (Bairro Boa Passagem) · Creche Municipal Mundo Mágico (Bairro
+  Maynard) · Creche Municipal Profª. Ana Edith de Medeiros (Bairro Walfredo
+  Gurgel) · Creche/EMEI Nossa Senhora do Rosário (Centro/Penedo) · EMEI São
+  José (Bairro Castelo Branco) · (várias escolas municipais urbanas e rurais
+  também ofertam turmas de Pré-escola de 4 e 5 anos).
+- Centros infantis privados de referência [BAIXA: agregador comercial]:
+  Externato Santa Clara · Externato Tia Hilda · Externato Arco-Íris · Centro
+  de Educação Ágape · Escola SESC Caicó.
+
+### 5.2 Ensino Fundamental (6 a 14 anos)
+- Anos Iniciais (1.º-5.º): gestão predominantemente municipal (2.245 matrículas
+  em 2025). Foco no ciclo de alfabetização até o 2.º ano via MAIS PAIC /
+  Regime de Colaboração RN e o Compromisso Nacional Criança Alfabetizada
+  (CNCA). Ideb municipal 2025: 5,8 [ALTA].
+- Anos Finais (6.º-9.º): gestão compartilhada municipal/estadual (2.057
+  matrículas em 2025). Reforço em contraturno, Busca Ativa Escolar (UNICEF) e
+  olimpíadas nacionais (OBMEP, OBA). Ideb público 2023: 4,2 [ALTA].
+- Rede municipal urbana (SEME Caicó — 31 escolas municipais no Censo 2025) [MEDIA]:
+  E.M. Maria Leonor Cavalcanti (Centro) · E.M. Presidente Kennedy (Centro) ·
+  E.M. Auta de Souza (Barra Nova) · E.M. Coronel Paulino Barcelos (Paraíba) ·
+  E.M. Prof. Mateus Viana (Boa Passagem) · E.M. Irmã Maria Assunta Vieira
+  (Paraíba) · E.M. Ivanor Pereira (João XXIII) · E.M. Prof. José Gurgel de
+  Araújo (Walfredo Gurgel) · E.M. Profª. Maria Bernadete Marques de Souza
+  Ginane (Recreio) · E.M. Severina Brito da Silva (Maynard) · E.M. Severina
+  Ernestina Abigail (Itans) · E.M. Frei Damião (Frei Damião) · E.M. Hermann
+  Gmeiner (Soledade) · E.M. Maria Fernandes da Silva (Castelo Branco) ·
+  E.M. Olívia Pereira Rodrigues (Samanaú) · E.M. Prof. Raimundo Guerra
+  (Penedo) · E.M. Profª. Inah de Medeiros Dantas (Penedo) · E.M. Walfredo
+  Gurgel (Walfredo Gurgel).
+- Rede municipal rural: Centros Municipais de Ensino Rural nas comunidades de
+  Laginhas, Palma, Perímetro Irrigado Sabugi, Umari, Várzea Alegre e Barra da
+  Espingarda, com transporte escolar rural gratuito.
+- Escolas estaduais com Ensino Fundamental: E.E. Monsenhor Walfredo Gurgel ·
+  E.E. Senador Dinarte Mariz · E.E. Dom José Adelino Dantas · E.E. Padre
+  Edmund Kagerer · E.E. Prof. Antônio Aladim de Araújo · E.E. Profª. Rosa de
+  Lima Bezerra · E.E. Vilagran Cabrita · E.E. Zuza Januário · unidades
+  estaduais rurais em Laginhas, Palma e Sabugi.
+
+### 5.3 Ensino Médio (15 a 17 anos)
+- Cobertura: 2.045 matrículas em 2025 [MEDIA]. Preparação para ENEM/SISU e
+  formação cidadã/profissional.
+- Modalidades de oferta:
+  1. Ensino Médio Regular (parcial): turnos matutino, vespertino e noturno,
+     estrutura do Novo Ensino Médio (Formação Geral Básica + Itinerários).
+  2. Ensino Médio em Tempo Integral (EETI): jornada ampliada, Projeto de Vida,
+     protagonismo juvenil e laboratórios (destaque: Centro Educacional José
+     Augusto — EETIJA).
+  3. Ensino Médio Integrado à Educação Profissional (Técnico Integrado): rede
+     federal (IFRN Campus Caicó, 4 anos).
+- Principais centros de Ensino Médio em Caicó:
+  - Rede pública estadual (10.ª DIREC — 14 escolas estaduais em Caicó em
+    2025): CE José Augusto (EETIJA — Tempo Integral) · E.E. Profª. Calpúrnia
+    Caldas de Amorim (EECCAM) · E.E. Monsenhor Walfredo Gurgel · E.E. Senador
+    Dinarte Mariz · E.E. Dom José Adelino Dantas · E.E. Prof. Antônio Aladim
+    de Araújo.
+  - Rede pública federal: IFRN Campus Caicó (Rodovia RN 288, s/n — Nova Caicó).
+  - Rede privada (14 escolas privadas no Censo 2025): Colégio Diocesano
+    Seridoense (CDS) · Educandário Santa Teresinha · Centro Educacional
+    Integrado do Seridó (CEIS) · Colégio Santa Clara.
+
+### 5.4 Modalidades transversais e gestão
+- Educação Especial e inclusiva: 437 matrículas [MEDIA]. Salas de Recursos
+  Multifuncionais (Atendimento Educacional Especializado — AEE) em escolas
+  públicas e atendimento multidisciplinar na Escola Prof. Severino Lopes da
+  Silva — APAE de Caicó-RN.
+- EJA (Educação de Jovens e Adultos): 722 matrículas [MEDIA]. Oferta noturna
+  municipal (Ensino Fundamental) e estadual via CEJA Senador Guerra (Fundamental e Médio).
+- Órgãos de gestão da Educação Básica:
+  - Secretaria Municipal de Educação (SEME Caicó): secretário Sérgio André de
+    Araújo [ALTA, aviso oficial 2025]. Endereço: Av. Coronel Martiniano, 993 —
+    Centro Administrativo, Caicó-RN. Portal: caico.rn.gov.br.
+  - 10.ª Diretoria Regional de Educação e Cultura (10.ª DIREC — Governo do RN):
+    sede em Caicó (Rua Monsenhor Severiano, 150 — Penedo) [ALTA]. Coordina a
+    rede estadual em Caicó e municípios vizinhos do Seridó (circunscrição
+    histórica: Caicó, Ipueira, Jardim de Piranhas, Jardim do Seridó, Jucurutu,
+    Ouro Branco, São Fernando, São João do Sabugi, São José do Seridó, Serra
+    Negra do Norte e Timbaúba dos Batistas) [MEDIA].
+
+### 5.5 DIRETÓRIO COMPLETO DE ESCOLAS — CENSO ESCOLAR 2025 (61 escolas em funcionamento)
+Siglas mantidas como registradas no Censo (Inep). "C MUL DO E R" = unidades do
+Centro Municipal de Educação do Campo/Rural. Código = CO_ENTIDADE (para
+consultas no QEdu/portal Inep).
+
+**Rede Federal (1 escola):**
+- IFRN - CAMPUS CAICO (código 24329312) — Urbana; Ensino Médio (integrado/técnico) + Educ. Especial/AEE; 51 docentes [07/04/2025 a 10/02/2026] [ALTA: Censo Escolar 2025/Inep]
+
+**Rede Estadual (14 escolas):**
+- CE JOSE AUGUSTO (código 24031348) — Urbana; Ensino Médio + Educ. Especial/AEE; 15 docentes [17/02/2025 a 14/01/2026] [ALTA: Censo Escolar 2025/Inep]
+- CEJA SENADOR GUERRA (código 24031313) — Urbana; EJA + Educ. Especial/AEE; 31 docentes [10/02/2025 a 22/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL DOM JOSE ADELINO DANTAS (código 24031518) — Urbana; Fund. Anos Finais + EJA + Educ. Especial/AEE; 20 docentes [10/02/2025 a 09/01/2026] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL FRANCISCO PERGENTINO DE ARAUJO (código 24031593) — Rural; Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 15 docentes [10/02/2025 a 12/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL MANOEL PATRICIO DE FIGUEIREDO (código 24031500) — Rural; Fund. Anos Finais + EJA + Educ. Especial/AEE; 9 docentes [10/02/2025 a 19/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL MONSENHOR WALFREDO GURGEL (código 24031550) — Urbana; Fund. Anos Finais + Educ. Especial/AEE; 13 docentes [10/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL PADRE EDMUND KAGERER (código 24031496) — Urbana; Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 14 docentes [10/02/2025 a 12/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL PROFESSOR ANTONIO ALADIM DE ARAUJO (código 24031585) — Urbana; Fund. Anos Finais + Ensino Médio + EJA + Educ. Especial/AEE; 37 docentes [10/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL PROFESSOR JOAQUIM GUEDES CORREIA GONDIM NETO (código 24031828) — Rural; Fund. Anos Finais; 6 docentes [10/02/2025 a 19/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL PROFESSORA CALPURNIA CALDAS DE AMORIM (código 24031658) — Urbana; Ensino Médio + Educ. Especial/AEE; 31 docentes [10/02/2025 a 23/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL PROFESSORA ROSA DE LIMA BEZERRA (código 24031640) — Urbana; EJA + Educ. Especial/AEE; 12 docentes [10/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL SENADOR DINARTE MARIZ (código 24032441) — Urbana; Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 14 docentes [10/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL VILAGRAN CABRITA (código 24031682) — Urbana; Fund. Anos Iniciais + Educ. Especial/AEE; 16 docentes [10/02/2025 a 15/01/2026] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA ESTADUAL ZUZA JANUARIO (código 24031704) — Urbana; Fund. Anos Finais + Educ. Especial/AEE; 10 docentes [10/02/2025 a 19/12/2025] [ALTA: Censo Escolar 2025/Inep]
+
+**Rede Municipal (31 escolas):**
+- C MUL DO E R UNID III EDGAR JOSE DE MORAIS (código 24031968) — Rural; Educação Infantil (creche e pré-escola) + Fund. Anos Finais + Educ. Especial/AEE; 3 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- C MUL DO E R UNID VI JOAQUIM CANUTO DOS SANTOS (código 24032018) — Rural; Fund. Anos Iniciais + Fund. Anos Finais; 3 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- C MUL DO E R UNID VIII LAGOA DO MEIO (código 24032034) — Rural; Fund. Anos Finais + Educ. Especial/AEE; 2 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- C MUL DO E R UNIDADE XIV VEREADOR JOSE ALEXANDRE PEREIRA (código 24031429) — Rural; Educação Infantil (creche e pré-escola) + Fund. Anos Finais + Educ. Especial/AEE; 5 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- C MUL DO E RUNID X MARIA BERNADETE MARQUES SOUZA GINANE (código 24031410) — Rural; Educação Infantil (creche e pré-escola) + Fund. Anos Finais + Educ. Especial/AEE; 4 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- CENTRO RURAL XVIII ESCOLA DONA EULALIA QUILIDONIA DE ARAUJO (código 24031461) — Rural; Educação Infantil (creche e pré-escola) + Fund. Anos Finais; 4 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- CRECHE MUNICIPAL DONA OSCARINA DE OLIVEIRA TORRES (código 24086347) — Urbana; Educação Infantil (creche e pré-escola) + Educ. Especial/AEE; 15 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- CRECHE MUNICIPAL GENTE FELIZ (código 24084107) — Urbana; Creche (0-3) + Educ. Especial/AEE; 26 docentes [06/02/2025 a 24/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- CRECHE MUNICIPAL MUNDO MAGICO (código 24084115) — Urbana; Creche (0-3) + Educ. Especial/AEE; 6 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- CRECHE MUNICIPAL PROFESSORA ANA EDITH DE MEDEIROS (código 24090530) — Urbana; Creche (0-3) + Educ. Especial/AEE; 14 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL AUTA DE SOUZA (código 24031887) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Educ. Especial/AEE; 14 docentes [06/02/2025 a 26/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL IRMA MARIA ASSUNTA VIEIRA (código 24032468) — Urbana; Fund. Anos Iniciais + Educ. Especial/AEE; 11 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL IVANOR PEREIRA (código 24064521) — Urbana; Pré-escola (4-5) + Fund. Anos Finais + Educ. Especial/AEE; 13 docentes [11/02/2025 a 24/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL PRESIDENTE KENNEDY (código 24032204) — Urbana; Fund. Anos Finais + Educ. Especial/AEE; 15 docentes [06/02/2025 a 23/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL PROF JOSE GURGEL DE ARAUJO (código 24032220) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Educ. Especial/AEE; 16 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL PROF MARIA BERNADETE MARQUES DE SOUZA GINANE (código 24064378) — Urbana; Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 13 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL PROF MATEUS VIANA (código 24032239) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 15 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL SEVERINA BRITO DA SILVA (código 24063258) — Urbana; Fund. Anos Iniciais + Fund. Anos Finais + EJA + Educ. Especial/AEE; 14 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUL SEVERINA ERNESTINA ABIGAIL (código 24032310) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 12 docentes [06/02/2025 a 24/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESC MUNICIPAL CORONEL PAULINO BARCELOS (código 24032638) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Educ. Especial/AEE; 15 docentes [06/02/2025 a 24/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL DE EDUCACAO INFANTIL NOSSA SENHORA DO ROSARIO (código 24064564) — Urbana; Creche (0-3) + Educ. Especial/AEE; 15 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL DE EDUCACAO INFANTIL SAO JOSE (código 24031453) — Urbana; Creche (0-3) + Educ. Especial/AEE; 23 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL FREI DAMIAO (código 24068144) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Finais; 12 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL HERMANN GMEINER (código 24080276) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 15 docentes [06/02/2025 a 29/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL MARIA FERNANDES DA SILVA (código 24068160) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + EJA + Educ. Especial/AEE; 22 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL MARIA LEONOR CAVALCANTI (código 24032093) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Educ. Especial/AEE; 9 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL OLIVIA PEREIRA RODRIGUES (código 24067938) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Educ. Especial/AEE; 14 docentes [06/02/2025 a 24/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL PROFESSOR RAIMUNDO GUERRA (código 24032247) — Urbana; Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 15 docentes [06/02/2025 a 24/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL PROFESSORA INAH DE MEDEIROS DANTAS (código 24068152) — Urbana; Fund. Anos Iniciais + Fund. Anos Finais + EJA + Educ. Especial/AEE; 18 docentes [06/02/2025 a 24/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL SEVERINO PAULINO DE SOUZA (código 24032328) — Rural; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 10 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA MUNICIPAL WALFREDO GURGEL (código 24068128) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Educ. Especial/AEE; 14 docentes [06/02/2025 a 18/12/2025] [ALTA: Censo Escolar 2025/Inep]
+
+**Rede Privada (14 escolas com docentes):**
+- CENTRO DE EDUCACAO INFANTIL ARTE DE BRINCAR (código 24088250) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Educ. Especial/AEE; 11 docentes [28/01/2025 a 05/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- CENTRO EDUCACIONAL EVOLUCAO (código 24032573) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 18 docentes [28/01/2025 a 09/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- CENTRO EDUCACIONAL INTEGRADO DO SERIDO (código 24068500) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 37 docentes [31/01/2025 a 30/11/2025] [ALTA: Censo Escolar 2025/Inep]
+- COLEGIO DIOCESANO SERIDOENSE (código 24031372) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 56 docentes [28/01/2025 a 26/11/2025] [ALTA: Censo Escolar 2025/Inep]
+- COLEGIO SANTA CLARA (código 24079286) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 51 docentes [03/02/2025 a 08/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- COLEGIO UNIVERSITARIO DE CAICO - CUCA (código 24081078) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 26 docentes [27/01/2025 a 12/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- EDUCANDARIO MUNDO INFANTIL (código 24072095) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais; 4 docentes [04/02/2025 a 13/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- EDUCANDARIO STA TERESINHA (código 24031470) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 47 docentes [27/01/2025 a 19/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA CRIATIVA (código 24080217) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Educ. Especial/AEE; 7 docentes [30/01/2025 a 03/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA SESC (código 24079260) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Educ. Especial/AEE; 8 docentes [10/02/2025 a 11/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA TECNICA DE ENFERMAGEM RAIMUNDA NONATA (código 24078212) — Urbana; Educ. Especial/AEE; 55 docentes [11/01/2025 a 20/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- EXTERNATO SANTA CLARA I (código 24032549) — Urbana; Educação Infantil (creche e pré-escola) + Fund. Anos Iniciais + Fund. Anos Finais + Ensino Médio + Educ. Especial/AEE; 28 docentes [03/01/2025 a 08/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- EXTERNATO SAO JOAO BATISTA (código 24072176) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Fund. Anos Finais; 3 docentes [01/02/2025 a 12/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- INSTITUTO DE EDUCACAO INTEGRAL ARCO-IRIS (código 24070890) — Urbana; Pré-escola (4-5) + Fund. Anos Iniciais + Fund. Anos Finais + Educ. Especial/AEE; 16 docentes [31/01/2025 a 08/12/2025] [ALTA: Censo Escolar 2025/Inep]
+- ESCOLA PROFESSOR SEVERINO LOPES DA SILVA - APAE DE CAICÓ-RN (código 24032417) — Urbana; educação especial exclusiva; escola filantrópica em funcionamento, com equipe própria (sem docentes registrados na tabela de docentes do Censo 2025) [ALTA]
+
+**Unidades cadastradas SEM funcionamento em 2025 (14, Censo Escolar 2025) [ALTA]:**
+- C MUL DO E R UNID V ISAIAS LOPES DE ARAUJO
+- CEI- CENTRO DE ENSINO INTERATIVO
+- CENTRO DE ATIVIDADES COMPLEMENTAR PETI
+- CENTRO DE EDUCACAO AGAPE
+- CENTRO DE EDUCACAO PESTALOZZI
+- CENTRO DE FORMACAO PROFISSIONAL E SERVICOS
+- CENTRO DE PROM SOC STO ESTEVAO DIACONO
+- ESCOLA ISOLADA JOSE TEIXEIRA DE CARVALHO
+- ESCOLA POLITECNICA DO NORDESTE LTDA - UNIDADE CAICO
+- EXTERNATO SAO JUDAS TADEU
+- EXTERNATO STO ANTONIO
+- EXTERNATO TIA HILDA
+- SENAI - CENTRO DE UNIDADES MOVEIS
+- SERVICO NACIONAL DE APRENDIZAGEM COMERCIAL - SENAC CAICO
+
+## 6. EDUCAÇÃO SUPERIOR
+Caicó é o principal polo universitário do interior centro-sul do RN.
+
+### 6.1 UFRN — Centro de Ensino Superior do Seridó (CERES), Campus Caicó
+Fontes: ceres.ufrn.br e Relatório de Gestão do CERES-UFRN 2025 [ALTA].
+- Histórico e comunidade (2025): 52 anos de atividade acadêmica (origem em
+  março de 1974). Comunidade de ~2.050 pessoas (~1.850 estudantes ativos de
+  graduação e pós-graduação + ~200 servidores docentes, técnicos e
+  terceirizados), vindas principalmente do RN e da Paraíba [ALTA].
+- 6 departamentos: Geografia (DGC), História (DHC), Ciências Exatas e
+  Aplicadas (DCEA), Educação (DEDUC), Direito (DIR) e Computação e Tecnologia (DCT).
+- Graduações ofertadas (10 cursos vigentes desde 2026.1) [ALTA], com taxa de
+  êxito SIGAA 2025.2:
+  1. Direito (Bacharelado) — 94,80 %
+  2. Ciências Contábeis (Bacharelado) — 93,84 %
+  3. Sistemas de Informação (Bacharelado) — 91,47 %
+  4. Pedagogia (Licenciatura) — 97,30 %
+  5. Geografia (Licenciatura) — 91,64 %
+  6. Geografia (Bacharelado) — 91,05 %
+  7. História (Licenciatura — manhã/tarde 91,86 % e noite 94,61 %) (o
+     Bacharelado em História consta em processo de extinção)
+  8. Matemática (Licenciatura) — 80,52 %
+  9. Engenharia de Computação (Bacharelado — novo via SISU desde 2026.1, 40 vagas/ano) [ALTA]
+  10. Arqueologia (Bacharelado — novo via SISU desde 2026.1, 25 vagas/ano) [ALTA]
+- Pós-graduação stricto sensu [ALTA]: GEOCERES (Mestrado Acadêmico em
+  Geografia) · GEOPROF (Mestrado e Doutorado Profissional em Ensino de
+  Geografia) · PPGHC (Mestrado Acadêmico em História dos Sertões) · PPGENAP
+  (Mestrado Acadêmico em Metodologias de Ensino e Processos de Aprendizagem) ·
+  PROFCOMP (Mestrado Profissional em Ensino da Computação em Rede Nacional,
+  aprovado em 2025).
+- Pesquisa e extensão (2025): 31 projetos de pesquisa, 39 bolsas de iniciação
+  científica, 49 projetos de monitoria (87 monitores) e 368 ações de extensão [ALTA].
+
+### 6.2 UFRN — Escola Multicampi de Ciências Médicas (EMCM), sede Caicó
+- Graduação ofertada: Medicina (Bacharelado), no catálogo oficial da UFRN [ALTA].
+
+### 6.3 UERN — Campus Avançado de Caicó (CAC)
+Fonte: Lista Oficial de Cursos de Graduação UERN (09/2025) [ALTA].
+- Graduações presenciais vigentes:
+  1. Filosofia (Licenciatura — funciona desde 2002).
+  2. Enfermagem (Bacharelado — criado em 2006).
+  3. Odontologia (Bacharelado — criado em 2006; com clínicas-escola de atenção comunitária).
+- Outros registros UERN Caicó: curso tecnológico em Gestão Pública (Resolução
+  de 2014, vigência atual não verificada [BAIXA]); curso EaD Gestão na Educação
+  Profissional e Tecnológica vinculado ao Depto. de Filosofia (Resolução
+  04/2026-CONSEPE [BAIXA]).
+
+### 6.4 Educação superior privada e polos EAD
+- Instituição privada presencial: Faculdade Católica Santa Teresinha (FCST).
+- Polos EAD ativos em Caicó [MEDIA/BAIXA]: UFRN/SEDIS · Anhanguera EAD ·
+  Unopar · Uniasselvi · Estácio · Unicesumar · Cruzeiro do Sul Virtual ·
+  UNIP · UNINTER.
+
+## 7. EDUCAÇÃO PROFISSIONAL E TÉCNICA
+### 7.1 IFRN — Campus Caicó (Instituto Federal do Rio Grande do Norte)
+- Instituição pública federal gratuita, Rodovia RN 288, s/n — Nova Caicó.
+  Portal: portal.ifrn.edu.br.
+- Áreas tecnológicas prioritárias (Edital n.º 51/2025-DG/CA): Eletrotécnica,
+  Informática, Têxtil, Vestuário, Moda e Física [ALTA].
+- Articulação com a economia local: o bordado de Caicó possui Selo de
+  Indicação Geográfica (IG) desde 2018; o município é polo nacional de
+  confecção (bonés e têxtil), articulado às formações técnicas do IFRN [MEDIA].
+- Oferta formativa documentada:
+  - Técnico Integrado (médio + técnico, 4 anos): Informática · Informática
+    para Internet · Eletrotécnica · Têxtil · Vestuário [MEDIA].
+  - Técnico Subsequente (pós-médio, 2 anos): Informática · Eletrotécnica ·
+    Têxtil · Vestuário [MEDIA].
+  - Superior/pós e qualificação (FIC): Licenciatura em Física · Tecnologia em
+    Design de Moda · Especialização em Educação do Campo — Saberes da Terra
+    (400 h) · cursos curtos FIC (ex.: Modelista e Costureira em Geral, 180 h)
+    [BAIXA-MEDIA: verificar oferta ativa por semestre no portal.ifrn.edu.br].
+
+### 7.2 Outras entidades de formação profissional
+- SENAC Caicó (comércio, serviços, gestão, informática) e SENAI (unidades
+  móveis e indústria têxtil/elétrica) [MEDIA].
+
+## 8. CONTEXTO ESTADUAL E REGIONAL (RN / Seridó)
+- Ideb 2025 (Anos Iniciais, rede municipal): Caicó (5,8) acima da média do RN
+  (5,5), empatado com Currais Novos no 3.º lugar entre os 15 maiores municípios
+  do estado, porém abaixo da média nacional (6,1) e de vizinhos seridoenses
+  menores: Ipueira (7,3), Ouro Branco (6,9), Cruzeta (6,8) e São João do
+  Sabugi (6,8) [ALTA/MEDIA].
+- Alfabetização infantil (ICA 2024): RN registrou 39 %, abaixo da média
+  nacional (59,2 %), com programas estaduais de cooperação com os municípios do
+  Seridó [ALTA].
+
+## 9. DISCREPÂNCIAS E INCONSISTÊNCIAS DETECTADAS (NÃO RESOLVIDAS)
+O agente NUNCA deve apresentar estas divergências como dados homogêneos:
+1. Ideb 2025 (Anos Iniciais): 5,8 (Agora RN, rede municipal) vs 5,9 em
+   fragmento do QEdu (5,95 x 0,98, sem rede nem ano exatos).
+2. Taxa de analfabetismo: Censo 2022 dá 11,08 % implícito (15+ anos). Uma tese
+   da UNICAMP cita 3,89 % (IBGE 2010) sem precisar faixa etária; NÃO usar a
+   cifra de 2010 como taxa da população adulta.
+3. Matrículas de Ensino Médio (Censo 2025): QEdu indica 2.045, mas a soma por
+   ano (707+628+548) dá 1.883 (diferença de 162, provavelmente 4.º ano do
+   Técnico Integrado ou modalidades não seriadas).
+4. Número de graduações UFRN-CERES: Relatório 2025 lista 9 ativas (História
+   Bacharelado para extinção); o site institucional declara 10 após incluir
+   Engenharia de Computação e Arqueologia (2026.1). NÃO usar Wikipedia para
+   listar cursos do CERES (contém cursos inexistentes em Caicó).
+5. Estudantes vs matrículas no CERES: ~1.850 estudantes ativos (2025), mas a
+   soma de "matrículas" por curso em 2025.1 alcança 7.639 (são inscrições em
+   componentes curriculares, não pessoas).
+6. Total de cursos do IFRN-Caicó: menção a "15 cursos gratuitos" vem do
+   subdomínio portal-treinamento.ifrn.edu.br (possível ambiente de testes);
+   confrontar com portal.ifrn.edu.br.
+7. População estimada (63.338 hab.): um fragmento do IBGE atribui a 2025,
+   outro a 2026.
+8. Escolas municipais: 32 escolas/5.119 matrículas no agregador Meu Município
+   (~2019) vs 31 escolas municipais no Censo Escolar 2025 (QEdu).
+
+9. Número de docentes: fragmento do QEdu citava "421 professores" na rede
+   pública; a soma direta da Tabela Docente do Censo 2025 dá 681 (243 est +
+   387 mun + 51 fed). Provável causa: o QEdu conta apenas docentes "em
+   efetivo exercício" ou deduplica vínculos. Usar o número do Censo como
+   referência primária.
+10. Escolas em funcionamento: o Censo 2025 registra 61 escolas funcionando
+    (46 públicas + 15 privadas, incl. APAE), sendo 60 com docentes
+    registrados; o QEdu tradicionalmente indica "60 escolas".
+11. Educação Especial: a soma de docentes AEE (706) supera o plausível por
+    docente único — é contagem por atendimento em escola, não por pessoa.
+12. EJA estadual: dos 79 docentes EJA do município, 71 estão na rede
+    estadual (71) — concentrados no CEJA Senador Guerra e em escolas
+    estaduais com turmas de EJA.
+
+## 10. DADOS NÃO ENCONTRADOS (LACUNAS DA BASE)
+Se perguntarem por estes pontos, responda "não disponível nesta base" e
+oriente às fontes da Seção 12:
+- ICA 2024/2025 municipal de Caicó.
+- Ideb 2025 de Anos Finais, Ensino Médio, rede estadual em Caicó e por escola.
+- Proficiência média Saeb 2025 e notas do ENEM por escola.
+- Taxas recentes de distorção idade-série, aprovação e abandono (2024/2025).
+- IDHM-Educação desagregado (só consta o IDHM global 0,710 de 2010).
+- Matrículas exatas em Creche (0-3 anos), IFRN-Caicó e UERN-Caicó.
+- Orçamento educacional municipal vigente e dados de infraestrutura escolar
+  (bibliotecas, laboratórios, internet — QEdu).
+
+## 11. GLOSSÁRIO
+- Ideb: Índice de Desenvolvimento da Educação Básica (0-10, bienal; combina
+  notas do Saeb e taxa de aprovação).
+- Saeb: Sistema de Avaliação da Educação Básica (2.º, 5.º e 9.º anos e 3.º do Médio).
+- Censo Escolar: levantamento anual do Inep sobre escolas, matrículas, docentes
+  e infraestrutura.
+- ICA: Indicador Criança Alfabetizada (% de crianças alfabetizadas ao final do 2.º ano).
+- Educação Infantil (Creche/Pré-escola): 0-3 anos (Creche) e 4-5 anos
+  (Pré-escola, obrigatória).
+- Ensino Fundamental (Anos Iniciais/Anos Finais): 9 anos obrigatórios.
+- Ensino Médio: 3 anos, 15-17 anos (regular, tempo integral, técnico integrado).
+- EJA: Educação de Jovens e Adultos.
+- AEE: Atendimento Educacional Especializado (apoio pedagógico inclusivo em contraturno).
+- DIREC: Diretoria Regional de Educação e Cultura (Caicó sedia a 10.ª DIREC).
+- CERES/EMCM/CAC/IFRN: Centro de Ensino Superior do Seridó (UFRN), Escola
+  Multicampi de Ciências Médicas (UFRN), Campus Avançado de Caicó (UERN) e
+  Instituto Federal do RN.
+- ENEM/SISU: Exame Nacional do Ensino Médio e Sistema de Seleção Unificada.
+
+## 12. FONTES PRIMÁRIAS PARA CONSULTA AO VIVO (ORIENTAR O CIDADÃO)
+- IBGE Cidades (Caicó): https://cidades.ibge.gov.br/brasil/rn/caico/panorama
+- IBGE SIDRA (API Censo 2022): https://sidra.ibge.gov.br
+- Inep — Ideb e Saeb: https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb
+- Nota Informativa Ideb 2025: https://download.inep.gov.br/ideb/resultados/nota_informativa_ideb_2025.pdf
+- Inep — Censo Escolar: https://www.gov.br/inep
+- QEdu (Município de Caicó): https://qedu.org.br/municipio/2402006-caico
+- MEC — Criança Alfabetizada (RN): https://www.gov.br/mec/pt-br/crianca-alfabetizada/monitoramento-e-avaliacao/rn_ica2024.pdf
+- Primeira Infância em Dados (Caicó): https://primeirainfanciaemdados.org.br/municipios/caico-rn/
+- Prefeitura Municipal de Caicó: https://caico.rn.gov.br
+- UFRN — CERES: https://ceres.ufrn.br
+- UERN: https://portal.uern.br
+- IFRN: https://portal.ifrn.edu.br
+
+## 13. CONTATOS OFICIAIS (VERIFICAR ANTES DE PUBLICAR)
+- Secretaria Municipal de Educação (SEME Caicó): Av. Coronel Martiniano, 993 —
+  Centro Administrativo, Caicó-RN [VERIFICAR: telefone, horário de atendimento].
+- 10.ª DIREC: Rua Monsenhor Severiano, 150 — Penedo, Caicó-RN [VERIFICAR:
+  telefone].
+- IFRN Campus Caicó: Rodovia RN 288, s/n — Nova Caicó [VERIFICAR: telefone].
+- UFRN CERES Campus Caicó [VERIFICAR: endereço e telefone].
+- UERN Campus Avançado de Caicó [VERIFICAR: endereço e telefone].
+- Prefeitura de Caicó: caico.rn.gov.br [VERIFICAR: telefone da ouvidoria].
+
+## 14. PROTOCOLO DE ATUALIZAÇÃO DESTA BASE
+- Responsável pela atualização: [VERIFICAR: nome/órgão].
+- Fazer nova compilação a cada: divulgação de Ideb (bienal, agosto), Censo
+  Escolar (anual, março/abril), editais de matrícula (anual) e alterações de
+  cursos nas IES.
+- Ao atualizar: revisar as Seções 9 e 10, datar o cabeçalho e manter as
+  etiquetas de confiança.

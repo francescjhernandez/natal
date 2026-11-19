@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Informador de Caicó · Cidade Educadora</title>
+<meta name="description" content="Agente de IA que informa sobre a oferta educacional de Caicó (RN): creches, escolas municipais e estaduais, IFRN Campus Caicó, cursos técnicos, EJA, bolsas e transporte escolar. Em português, espanhol e inglês, com voz e letra ampliável.">
+<meta name="theme-color" content="#B5E61D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="48x48" href="iconos/favicon-48.png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Informador Caicó">
+<link rel="stylesheet" href="styles.css">
+<base target="_blank">
+</head>
+
+<body>
+
+<header class="cap">
+  <img class="logo" src="iconos/icon-192.png" alt="Logotipo do Informador de Caicó: brasão da cidade">
+  <div class="titols">
+    <h1>Informador de Caicó</h1>
+    <p class="subtitol">Cidade Educadora · RN</p>
+    <p class="lema" id="lema"></p>
+  </div>
+</header>
+
+<nav class="barra" aria-label="Opções de acessibilidade e idioma">
+  <div class="grup" role="group" aria-label="Tamanho da letra">
+    <button id="lletra-menys" class="boto eina" title="Diminuir a letra" aria-label="Diminuir a letra">A−</button>
+    <button id="lletra-reset" class="boto eina" title="Tamanho de letra normal" aria-label="Tamanho de letra normal">A</button>
+    <button id="lletra-mes" class="boto eina" title="Aumentar a letra" aria-label="Aumentar a letra">A+</button>
+  </div>
+  <label class="seleccio-idioma">
+    <span class="sr-only">Idioma / Idioma / Language</span>
+    <select id="idioma" aria-label="Escolha o idioma da conversa"></select>
+  </label>
+  <button id="instalar" class="boto or" hidden>📱 <span id="instalar-text">Instalar app</span></button>
+</nav>
+
+<main>
+  <section id="xat" class="xat" aria-live="polite" aria-label="Conversa com o Informador"></section>
+
+  <form id="formulari" class="formulari" autocomplete="off">
+    <button type="button" id="micro" class="boto eina gran" title="Falar" aria-label="Ditar a pergunta com voz">🎙️</button>
+    <input id="entrada" type="text" required
+           placeholder="Escreva sua pergunta…"
+           aria-label="Escreva sua pergunta sobre a oferta educacional de Caicó">
+    <button type="submit" id="enviar" class="boto gran" title="Enviar" aria-label="Enviar a pergunta">➤</button>
+  </form>
+  <p id="estat" class="estat" role="status"></p>
+</main>
+
+<footer class="peu">
+  <p>Informador de Caicó · Projeto piloto, 2026</p>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

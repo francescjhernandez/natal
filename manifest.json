@@ -1,0 +1,23 @@
+{
+  "name": "Informador de Caicó · Cidade Educadora",
+  "short_name": "Informador Caicó",
+  "description": "Agente de IA trilíngue (pt-BR, es, en) sobre a oferta educacional de Caicó (RN). Voz, letra ampliável e instalável.",
+  "id": "/caico/",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#B5E61D",
+  "theme_color": "#B5E61D",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": ["education", "productivity"],
+  "icons": [
+    { "src": "iconos/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "iconos/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "iconos/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Pergunta rápida", "url": "./index.html", "icons": [{ "src": "iconos/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
