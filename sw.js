@@ -1,5 +1,5 @@
-/* Service Worker — Informador de Caicó (PWA offline) */
-const CACHE = "caico-v1";
+/* Service Worker — Informador de Natal (PWA offline) */
+const CACHE = "natal-v1";
 const ESTÀTICS = [
   "./", "./index.html", "./styles.css", "./app.js", "./manifest.json",
   "./iconos/icon-192.png", "./iconos/icon-512.png", "./iconos/icon-maskable-512.png",
