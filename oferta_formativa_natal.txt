@@ -1,0 +1,557 @@
+# Natal (Rio Grande do Norte, Brasil) — Educación
+## Base de conocimiento para agente IA
+
+---
+
+## 0. METADATOS Y REGLAS DE USO
+
+- Fecha de compilación: 2026-11-19
+- Municipio: Natal (capital del estado) | UF: RN (Rio Grande do Norte) | Código IBGE: 2408102
+- Idioma del documento: español. Los nombres propios, siglas e indicadores se mantienen en portugués (Ideb, Saeb, Censo Escolar, DIREC, CMEI, etc.).
+- Etiquetas de confianza usadas en cada dato:
+  - [ALTA] = cifra leída en una fuente oficial o primaria (IBGE, Inep/MEC, UFRN, UERN, IFRN, Prefeitura) o calculada directamente a partir de los microdatos del Censo Escolar 2025 aportados (ver 0.1).
+  - [MEDIA] = fuente secundaria (prensa, agregador, blog) que cita un dato oficial; o fuente primaria cuyo contexto (año, red, definición) no está del todo claro.
+  - [BAJA] = dato ambiguo, de año incierto o no contrastado.
+- LIMITACIÓN TÉCNICA DE LA COMPILACIÓN: los portales IBGE Cidades, QEdu e Inep no se pudieron abrir directamente (error del sitio o bloqueo de bots). Las cifras de esos portales proceden de los fragmentos (snippets) devueltos por el buscador o de prensa que los reproduce. Deben verificarse en la fuente primaria antes de usarse en un informe formal.
+
+### 0.1 Tablas del Censo Escolar 2025 usadas para verificar y ampliar
+Se aportaron dos hojas de cálculo con el formato y los nombres de variables de los microdatos del Censo Escolar 2025 del Inep, filtradas para Natal:
+- **Tabela_Escola_2025_V2** (598 registros de escuelas; 290 variables: dependencia, situación de funcionamiento, etapas ofertadas, infraestructura, equipamiento, personal no docente, gestión).
+- **Tabela_Docente_2025_V2** (475 escuelas; 184 variables: número de docentes por etapa, sexo, color/raza, edad, formación, vínculo, formación continuada y disciplinas).
+
+Cautelas obligatorias al usar estas tablas:
+1. **No contienen matrículas** (la tabla de matrículas del Censo no se aportó). Las cifras de alumnos de esta base proceden de otras fuentes (ver 4.6 y 5.1).
+2. **Los docentes se cuentan por escuela.** Un profesor que trabaja en dos escuelas aparece dos veces. Las sumas municipales de este documento son "vínculos docente-escuela", no personas físicas. El número oficial de docentes únicos del municipio (Sinopse Estatística del Inep) será menor.
+3. Dentro de una misma escuela, un docente que da clase en varias etapas cuenta en cada etapa, pero una sola vez en el total de la escuela (por eso AI + AF > total de Fundamental).
+4. Las categorías de posgrado y de vínculo no son excluyentes (un docente puede tener especialización y maestría), así que sus sumas pueden superar el total.
+5. Los códigos se interpretaron según el diccionario habitual de los microdatos del Inep (p. ej., situación 1 = en actividad, 2 = paralizada, 3 = extinguida; dependencia 1 = federal, 2 = estadual, 3 = municipal, 4 = privada). Cuando el significado de un código es inferido, se indica.
+
+### 0.2 REGLAS PARA EL AGENTE
+1. Responder SOLO con información de esta base. NUNCA inventar cifras, teléfonos, direcciones, fechas ni precios.
+2. Citar siempre AÑO, RED DE ENSEÑANZA (municipal / estadual / federal / privada / pública / total) y FUENTE de cada cifra.
+3. Si la información no está en esta base o figura en la sección 10 (lagunas), responder "no disponible en esta base" y orientar al ciudadano hacia las fuentes primarias de la sección 12 (portales oficiales).
+4. No comparar cifras de redes o años distintos como si fueran equivalentes, y NUNCA presentar como homogéneos los datos en discrepancia (ver sección 9).
+5. No presentar las sumas de docentes de la sección 4B como número de profesores del municipio (ver 0.1, punto 2).
+6. Para calendarios, plazos y valores, indicar SIEMPRE el año de referencia.
+7. Responder en el idioma de la pregunta (portugués, español o inglés).
+8. Ser cordial y objetivo; respuestas cortas, en lenguaje sencillo.
+9. Fuera del tema educación de Natal (salud, política, clima, etc.): rechazar educadamente y redirigir a la oferta educacional del municipio.
+10. ATENCIÓN: esta base es de 2026-11-19. Los datos cambian (Ideb cada 2 años, Censo Escolar e ICA cada año; editais, convocatorias de matrícula, plazas y resultados pueden haber variado). Para datos en tiempo real, orientar hacia los portales vivos de la sección 12.
+
+---
+
+## 1. CONTEXTO DEMOGRÁFICO Y SOCIOECONÓMICO
+
+Fuente principal: IBGE Cidades — https://www.ibge.gov.br/cidades-e-estados/rn/natal.html y https://cidades.ibge.gov.br/brasil/rn/natal/panorama
+
+| Indicador | Valor | Año | Confianza |
+|---|---|---|---|
+| Población (Censo) | 751.300 habitantes | 2022 | [ALTA] |
+| Población Censo anterior | 803.739 habitantes (−52.439; −6,52 %) | 2010 → 2022 | [ALTA] (IBGE, reproducido por Agora RN: https://agorarn.com.br/ultimas/evasao-em-natal-nao-e-exclusividade-do-rn/) |
+| Población estimada | 784.249 habitantes | 2025 | [ALTA] |
+| Área territorial | 167,401 km² | 2025 | [ALTA] |
+| Densidad demográfica | 4.488,03 hab/km² | 2022 | [ALTA] |
+| PIB per cápita | R$ 41.477,5 | 2023 | [ALTA] |
+| IDHM | 0,763 | 2010 | [ALTA] |
+| Mortalidad infantil | 11,54 por mil nacidos vivos | 2023 | [ALTA] |
+| Prefeito | Paulo Eduardo da Costa Freire ("Paulinho Freire", União Brasil) | 2025 | [ALTA] el nombre (IBGE); [MEDIA] el partido (prensa) |
+| Gentilicio | natalense | — | [ALTA] |
+
+Observaciones cualitativas:
+- La pérdida de población de Natal entre 2010 y 2022 coincide con el crecimiento de municipios de su región metropolitana (p. ej., Extremoz). [MEDIA] Fuente: https://www.brasildefato.com.br/2023/08/31/dinamicas-demograficas-e-imobiliarias-os-primeiros-dados-do-censo-2022-para-a-regiao-metropolitana-de-natal
+- Según datos del IBGE reproducidos por la prensa (2016 → 2024), en Natal la red privada dejó de ser mayoritaria en educación infantil (62,6 % → 50,4 %), la red pública pasó de 57,4 % a 59,2 % en enseñanza fundamental y bajó de 71,1 % a 66,0 % en enseñanza media; la enseñanza superior sigue concentrada en la red privada. [MEDIA: la nota no detalla la encuesta exacta; probablemente PNAD Contínua] Fuente: https://agorarn.com.br/?p=980597
+
+---
+
+## 1B. ESTRUCTURA NORMATIVA DE LA EDUCACIÓN BÁSICA EN BRASIL
+Conforme a la LDB (Lei n.º 9.394/1996) y la BNCC, la Educação Básica obligatoria cubre de los 4 a los 17 años:
+1. Educação Infantil (0 a 5 años):
+   - Creche (0 a 3 años): etapa no obligatoria para las familias; oferta obligatoria del municipio conforme a la demanda.
+   - Pré-escola (4 a 5 años): OBLIGATORIA por ley. Competencia prioritaria del municipio.
+2. Ensino Fundamental (6 a 14 años, 9 años, obligatorio):
+   - Anos Iniciais (1.º a 5.º año / 6 a 10 años): competencia prioritaria del municipio.
+   - Anos Finais (6.º a 9.º año / 11 a 14 años): competencia compartida municipio/Estado.
+3. Ensino Médio (15 a 17 años, 3 años, obligatorio):
+   - Regular, tiempo integral y técnico integrado. Competencia prioritaria del Estado (Gobierno de RN) y de la red federal (IFRN).
+
+Esta asignación de competencias explica la distribución de la oferta en Natal: la red municipal concentra la educación infantil y los años iniciales, y la red estadual, la enseñanza media (ver secciones 4.2 y 5).
+
+---
+
+## 2. RESULTADOS EDUCATIVOS
+
+### 2.1 Escolarización
+- Tasa de escolarización de 6 a 14 años: **97,86 %** (Censo 2022). [ALTA]
+  Fuente: https://www.ibge.gov.br/cidades-e-estados/rn/natal.html
+
+### 2.2 Ideb (Índice de Desenvolvimento da Educação Básica)
+- Definición: media de las notas estandarizadas de Saeb (portugués y matemática) multiplicada por la tasa de aprobación del Censo Escolar. Escala 0-10, publicado cada dos años.
+- Los resultados del Ideb 2025 se divulgaron el 5-6 de agosto de 2026.
+
+| Edición | Etapa | Red | Valor | Fuente | Confianza |
+|---|---|---|---|---|---|
+| 2021 | Años finales (6.º-9.º) | No especificada (probablemente pública) | 3,9 | https://agorarn.com.br/?p=913547 | [BAJA] |
+| 2023 | Años iniciales (1.º-5.º) | **Municipal** | 4,5 (la peor de las 26 capitales) | https://agorarn.com.br/politica/alvaro-admite-que-ideb-natal-deixou-desejar/ | [MEDIA] |
+| 2023 | Años finales | **Municipal** | 3,3 | https://agorarn.com.br/ultimas/ideb-de-mossoro-alcanca-uma-das-maior-nota-do-rn/ | [MEDIA] |
+| 2023 | Años finales | No especificada | 3,4 (meta 4,9) | https://agorarn.com.br/?p=913547 | [BAJA] (ver sección 9) |
+| 2025 | Años iniciales | **Municipal** | **4,8** (+0,3 sobre 2023; 116.ª posición entre los municipios de RN; 26.ª y última entre las capitales) | https://agorarn.com.br/?p=1038007 ; https://portaldeprefeitura.com.br/cotidiano/ideb-2025-confira-o-ranking-geral-das-capitais-brasileiras-na/628957/ | [MEDIA-ALTA] (dos fuentes de prensa coinciden; verificar en Inep) |
+| 2025 | Años finales | **Municipal** | **3,7** (22.ª posición en la clasificación de capitales publicada) | https://portaldeprefeitura.com.br/pernambuco/ideb-2025-recife-fica-atras-de-teresina-fortaleza-sao-luis-e/629015/ ; https://agorarn.com.br/ultimas/ideb-de-mossoro-dispara-e-municipio-lidera/ | [MEDIA] |
+| 2025 | Enseñanza media | — | No encontrado para Natal | — | — |
+| 2025 | Cualquier etapa | Estadual en Natal / pública total | No encontrado | — | — |
+
+Importante: comparar solo dentro de la misma red. La serie municipal de años iniciales (4,5 → 4,8) es coherente; no mezclarla con cifras de "red pública" o "total".
+
+### 2.3 Referencias para contextualizar el Ideb 2025
+- Media nacional de las redes municipales, años iniciales: 6,1. [MEDIA] Fuente: https://agorarn.com.br/coluna/ideb-e-hora-de-entender-os-numeros/
+- Rio Grande do Norte (redes pública y privada juntas), 2023 → 2025: años iniciales 5,3 → 5,7; años finales 4,1 → 4,6; enseñanza media 3,7 → 4,2. [MEDIA] Fuentes: https://agorarn.com.br/ultimas/ideb-do-rn-registra-maior-alta-do-pais/ y https://descomplica.com.br/blog/ideb-alta-rn-o-que-muda-vestibular-2/
+- Red pública estadual de RN, 2023 → 2025: años iniciales 4,8 → 5,2; años finales 3,7 → 4,2; enseñanza media 3,2 → 3,9 (otra fuente da 4,0 para la media; ver sección 9). [MEDIA]
+- Brasil, total (pública + privada), 2023 → 2025: años iniciales 6,0 → 6,3; años finales 5,0 → 5,3; enseñanza media 4,3 → 4,5. Red pública: 5,7 → 6,1; 4,7 → 5,0; 4,1 → 4,3. [MEDIA, reproduce Inep] Fuentes: https://www.metropoles.com/brasil/ideb-aponta-que-so-anos-iniciais-superam-meta-nacional-da-educacao y https://www.cnnbrasil.com.br/educacao/ideb-ensino-basico-tem-recorde-fundamental-2-e-medio-nao-alcancam-meta/
+- Comparación con otros municipios de RN, Ideb 2025, años iniciales, red municipal: Mossoró 6,1 frente a Natal 4,8 (diferencia de 1,3). [MEDIA] Fuente: https://agorarn.com.br/?p=1038007
+- Clasificación de los 15 mayores municipios de RN, Ideb 2025, años iniciales, red municipal: Mossoró 6,1 · Apodi 5,9 · Caicó 5,8 · Currais Novos 5,8 · Parnamirim 5,1 · São José de Mipibu 5,1 · Extremoz 5,0 · Nova Cruz 5,0 · Macaíba 4,9 · Assú 4,8 · Natal 4,8 · Santa Cruz 4,8 · São Gonçalo do Amarante 4,7 · João Câmara 4,6 · Ceará-Mirim 4,4. [MEDIA] Misma tabla del Inep reproducida por Agora RN: https://agorarn.com.br/?p=1038007
+- Nota informativa oficial del Inep: https://download.inep.gov.br/ideb/resultados/nota_informativa_ideb_2025.pdf
+
+### 2.4 Distorsión edad-curso (dato de baja confianza)
+- Un panorama del Todos Pela Educação para Natal muestra distorsión edad-curso de 12,0 % (años iniciales) y 39,4 % (años finales), frente a 9,3 % / 19,5 % (media del G46: capitales y municipios de más de 500.000 habitantes) y 8,0 % / 20,9 % (Brasil). [BAJA: el documento lleva la cabecera de otra ciudad (Joinville) aunque los rótulos dicen Natal; la red y el año (probablemente 2024) no están claros.] Fuente: https://todospelaeducacao.org.br/wordpress/wp-content/uploads/2025/12/panorama-educacional-natal-rn.pdf
+
+### 2.5 Condicionalidad del Fundeb (VAAR)
+- Natal no cumplió en 2026 la condicionalidad de la complementación VAAR del Fundeb: según el MEC, no redujo las desigualdades raciales y socioeconómicas en los indicadores de aprendizaje del Saeb. [MEDIA] Fuente: https://agorarn.com.br/ultimas/natal-quer-ampliar-ensino-integral-para-50-da-rede-em-cinco-anos/
+
+---
+
+## 3. ALFABETIZACIÓN
+
+### 3.1 Población de 15 años o más (Censo 2022)
+- Tasa de alfabetización de Natal: **93,36 %** (4.ª entre las capitales del Nordeste citadas, detrás de Recife, Fortaleza y João Pessoa). [ALTA] Fuente: https://jornaldebrasilia.com.br/noticias/brasil/veja-os-melhores-e-os-piores-municipios-brasileiros-em-alfabetizacao-segundo-o-censo-2022/
+- Tasa de analfabetismo: **6,6 %** (tabla del IBGE de municipios de más de 500.000 habitantes). [ALTA] Fuente: https://nada.ibge.gov.br/en/agencia-news/40118-2022-census-illiteracy-rate-falls-from-9-6-to-7-0-in-12-years-though-inequalities-persist.html?lang=en-GB
+  (Coherente: 100 − 93,36 = 6,64.)
+- Referencias: Brasil 93,0 % de alfabetización / 7,0 % de analfabetismo; Nordeste 85,8 % de alfabetización (Censo 2022). [ALTA] Fuente: https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-denoticias/40098-censo-2022-taxa-de-analfabetismo-cai-de-9-6-para-7-0-em-12-anos-mas-desifualdades-persistem
+
+### 3.2 ICA (Indicador Criança Alfabetizada: % de alumnos alfabetizados al final del 2.º año, red pública)
+- **Natal 2025: 40 %** de niños alfabetizados en la edad correcta, con el 75 % de los alumnos evaluados (mínimo exigido: 70 %). [MEDIA: prensa regional que reproduce el Inep] Fuente: https://agorarn.com.br/?p=1006675
+  - Posición: 127.º de 166 municipios evaluados de RN; penúltima entre las capitales (solo por delante de Porto Alegre, 27 %, afectada por las inundaciones).
+  - En la 1.ª DIREC quedó 1.ª: Extremoz y Macaíba 39 %, São Gonçalo do Amarante 37 %.
+  - Según la misma fuente, Natal **no tuvo ICA publicado en 2023 ni en 2024** por no alcanzar el 70 % de participación (ver sección 9: otra noticia anterior cita 34 % en 2023).
+- Rio Grande do Norte: 37 % (2023) → 39 % (2024) → 48 % (2025); último estado del país en 2025; meta de 2025 51 % (no alcanzada), meta 2026 57 %, meta 2030 80 %. [ALTA/MEDIA] Fuentes: https://www.gov.br/mec/pt-br/crianca-alfabetizada/monitoramento-e-avaliacao/rn_ica2024.pdf y https://portaln10.com.br/brasil/rn-termina-2025-em-ultimo-no-ranking-de-alfabetizacao-mesmo-com-avanco-no-indicador-325558/
+- Brasil: 56 % (2023) → 59,2 % (2024) → 66 % (2025; meta 64 %). [MEDIA] Fuente: https://portaln10.com.br/brasil/rn-termina-2025-em-ultimo-no-ranking-de-alfabetizacao-mesmo-com-avanco-no-indicador-325558/
+
+---
+
+## 4. OFERTA ESCOLAR — CENSO ESCOLAR 2025 (verificado y ampliado con las tablas aportadas)
+
+### 4.1 Escuelas por situación y dependencia administrativa [ALTA — Tabela_Escola_2025]
+
+| Situación | Federal | Estadual | Municipal | Privada | Total |
+|---|---|---|---|---|---|
+| En actividad | 8 | 113 | 147 | 214 | **482** |
+| Paralizada | 0 | 4 | 1 | 107 | 112 |
+| Extinguida (en 2025) | 0 | 0 | 0 | 4 | 4 |
+| Total de registros | 8 | 117 | 148 | 325 | 598 |
+
+- Red pública en actividad (federal + estadual + municipal): **268 escuelas**; privada: 214. (8 + 113 + 147 + 214 = 482: coherente.)
+- Las 482 escuelas en actividad son **urbanas**; ninguna en área de asentamiento, tierra indígena, quilombola o comunidad tradicional.
+- Todas las escuelas estaduales, municipales y privadas en actividad llevan el código de órgano regional 1, coherente con la **1.ª DIREC** (inferencia sobre el significado del código).
+- Las paralizadas son casi todas privadas: registros que siguen en el catastro del Inep pero no funcionaron en 2025. No contarlas como oferta.
+- **Verificación cruzada**: la Secretaria Municipal de Educação (SME) declara 74 escuelas de Enseñanza Fundamental y 73 CMEI (total 147), lo que coincide con las 147 escuelas municipales en actividad de la tabla. En la tabla, 74 nombres empiezan por "CMEI" y 73 por "ESC"; 73 escuelas ofrecen solo educación infantil y 73 ofrecen fundamental (el reparto 74/73 varía en ±1 según el criterio). [ALTA la suma; MEDIA el reparto]
+
+### 4.2 Escuelas en actividad que ofrecen cada etapa (enseñanza regular "comum") [ALTA — Tabela_Escola_2025]
+Una escuela puede ofrecer varias etapas; las filas no se suman.
+
+| Etapa | Federal | Estadual | Municipal | Privada | Pública | Total |
+|---|---|---|---|---|---|---|
+| Creche (0-3 años) | 1 | 0 | 66 | 117 | 67 | 184 |
+| Pré-escola (4-5 años) | 1 | 0 | 76 | 165 | 77 | 242 |
+| Años iniciales (1.º-5.º) | 1 | 44 | 60 | 170 | 105 | 275 |
+| Años finales (6.º-9.º) | 0 | 52 | 31 | 107 | 83 | 190 |
+| Enseñanza media (propedéutica) | 0 | 45 | 0 | 53 | 45 | 98 |
+| Enseñanza media integrada a la técnica | 3 | 21 | 0 | 1 | 24 | 25 |
+| Enseñanza media con FIC | 0 | 10 | 0 | 11 | 10 | 21 |
+| Curso Normal/Magisterio | 0 | 0 | 0 | 0 | 0 | 0 |
+| EJA (total) | 1 | 34 | 22 | 7 | 57 | 64 |
+| — EJA fundamental | 0 | 22 | 22 | 4 | 44 | 48 |
+| — EJA media | 1 | 23 | 0 | 6 | 24 | 30 |
+| — EJA profesional | 1 | 4 | 0 | 1 | 5 | 6 |
+| Educación profesional técnica (concomitante/subsecuente) | 7 | 0 | 0 | 15 | 7 | 22 |
+| Itinerario formativo técnico-profesional (nueva EM) | 3 | 25 | 0 | 12 | 28 | 40 |
+| Itinerario de profundización (nueva EM) | 0 | 51 | 0 | 44 | 51 | 95 |
+| Con enseñanza a distancia (EaD) | 3 | 0 | 0 | 6 | 3 | 9 |
+| Solo Atención Educativa Especializada (AEE, sin escolarización) | 0 | 3 | 0 | 4 | 3 | 7 |
+
+Lecturas clave:
+- La **red privada** está presente en más de la mitad de las escuelas de cada etapa: el 63,6 % de las que ofrecen creche, el 68,2 % de pré-escola, el 61,8 % de años iniciales, el 56,3 % de años finales y el 54,1 % de enseñanza media propedéutica. (Número de escuelas, no de alumnos.)
+- La **red municipal** concentra la educación infantil pública y los años iniciales; ofrece años finales en 31 escuelas y no ofrece enseñanza media.
+- La **red estadual** no ofrece educación infantil; concentra la enseñanza media pública y la mayor parte de la EJA media.
+- Una escuela estadual (CEJA Professor Felipe Guerra) funciona también en unidad penitenciaria.
+- 36 escuelas aplican examen de selección para el ingreso, entre ellas las 8 federales.
+- 7 centros solo de AEE: CE de Educação Especial, CAS (Centro de Capacitação de Educadores e Atendimento ao Surdo) y CAP Professora Iapissara Aguiar (estaduales); Instituto de Educação e Reabilitação dos Cegos, Centro Militão Chaves, Centro SUVAG y APAARN (privados).
+
+### 4.3 Red privada: categorías y convenios [ALTA — Tabela_Escola_2025]
+- De las 214 privadas en actividad: 195 particulares, 16 filantrópicas, 2 confesionales y 1 comunitaria.
+- 16 privadas declaran convenio con el poder público: 15 con código 1 y 1 con código 2 (según el diccionario del Inep, 1 = municipal y 2 = estadual; [MEDIA] sobre el significado). Las 15 del código 1 ofrecen educación infantil (creche y/o pré-escola); esto sugiere vacantes de creche/pré-escola concertadas por la Prefeitura (inferencia propia).
+- Regularización ante el sistema de enseñanza: 155 privadas regularizadas, 47 en trámite y 12 sin regularizar; en la red municipal, 106 regularizadas y 41 en trámite.
+
+### 4.4 Infraestructura de las escuelas en actividad (% de escuelas) [ALTA — Tabela_Escola_2025]
+
+| Indicador | Estadual (113) | Federal (8) | Municipal (147) | Privada (214) | Pública (268) | Total (482) |
+|---|---|---|---|---|---|---|
+| Biblioteca o sala de lectura | 98,2 | 87,5 | 65,3 | 92,1 | 79,9 | 85,3 |
+| Laboratorio de ciencias | 32,7 | 50,0 | 8,8 | 31,8 | 20,1 | 25,3 |
+| Laboratorio de informática | 61,1 | 100 | 35,4 | 29,9 | 48,1 | 40,0 |
+| Cancha deportiva (quadra) | 54,9 | 62,5 | 36,7 | 56,5 | 45,1 | 50,2 |
+| Cancha cubierta | 36,3 | 50,0 | 34,0 | 47,7 | 35,4 | 40,9 |
+| Parque infantil | 10,6 | 12,5 | 61,2 | 80,8 | 38,4 | 57,3 |
+| Comedor (refeitório) | 77,0 | 75,0 | 78,9 | 44,9 | 78,0 | 63,3 |
+| Auditorio | 28,3 | 87,5 | 2,7 | 31,3 | 16,0 | 22,8 |
+| Sala de AEE (recursos multifuncionales) | 64,6 | 62,5 | 53,7 | 52,3 | 58,6 | 55,8 |
+| Baño adaptado a personas con discapacidad | 85,8 | 100 | 64,6 | 86,9 | 74,6 | 80,1 |
+| Rampas | 89,4 | 87,5 | 72,1 | 85,5 | 79,9 | 82,4 |
+| Sin ningún recurso de accesibilidad | 7,1 | 0 | 16,3 | 3,3 | 11,9 | 8,1 |
+| Alcantarillado de red pública | 59,3 | 87,5 | 55,1 | 76,6 | 57,8 | 66,2 |
+| Internet (cualquier uso) | 98,2 | 100 | 100 | 98,6 | 99,3 | 99,0 |
+| Internet para uso de los alumnos | 69,0 | 100 | 48,3 | 52,3 | 58,6 | 55,8 |
+| Internet para enseñanza-aprendizaje | 88,5 | 100 | 76,2 | 76,2 | 82,1 | 79,5 |
+| Banda ancha | 94,6 | 100 | 97,3 | 97,2 | 96,2 | 96,6 |
+| Ordenadores de sobremesa para alumnos | 76,1 | 100 | 50,3 | 62,6 | 62,7 | 62,7 |
+| Portátiles para alumnos | 78,8 | 37,5 | 39,5 | 62,6 | 56,0 | 58,9 |
+| Tabletas para alumnos | 37,2 | 12,5 | 55,1 | 28,0 | 46,3 | 38,2 |
+| Pizarra digital | 19,5 | 37,5 | 43,5 | 12,1 | 33,2 | 23,9 |
+| Energía renovable | 2,7 | 50,0 | 0 | 21,0 | 2,6 | 10,8 |
+| Alimentación escolar | 100 | 50,0 | 100 | 18,2 | 98,5 | 62,9 |
+| Consejo escolar | 97,3 | 87,5 | 100 | 24,8 | 98,5 | 65,8 |
+| Gremio estudiantil | 22,1 | 37,5 | 0 | 10,7 | 10,4 | 10,6 |
+
+Datos complementarios:
+- Aulas en uso: 6.084 en total (estadual 1.105; federal 211; municipal 1.229; privada 3.539). Climatizadas: 59,6 % del total; estadual 49,4 %, federal 98,6 %, municipal 35,9 %, privada 68,7 %. Accesibles: 58,8 % del total. [ALTA]
+- Edificio propio: 98 de 113 estaduales, 120 de 147 municipales y 141 de 214 privadas; alquilado en 3 estaduales, 13 municipales y 62 privadas; cedido en 11 estaduales, 14 municipales y 10 privadas. [ALTA]
+- Tabletas para alumnos declaradas: 13.529 en total, de las cuales **12.361 en la red municipal** (presentes en 81 de sus 147 escuelas). [ALTA]
+- 5 escuelas en actividad declaran no tener internet (2 estaduales y 3 privadas). [ALTA]
+
+### 4.5 Personal no docente declarado por las escuelas [ALTA en el recuento; MEDIA en la interpretación]
+Suma de lo que declara cada escuela (puede repetir a personas que trabajan en varias escuelas; se excluyen los valores de control 88888):
+- Servicios generales 3.061; administrativos 1.115; alimentación 1.061; personal pedagógico (coordinación/supervisión) 974; dirección/gestión 472; bibliotecarios 418; secretarios escolares 360; coordinadores 333; monitores 254; nutricionistas 209 (146 en la red municipal); seguridad 179; salud 148; psicólogos 137 (ninguno declarado en escuelas estaduales o municipales); asistentes sociales 56 (ninguno en estaduales o municipales); intérpretes de Libras 44; revisores de braille 5.
+
+### 4.6 Matrículas (no incluidas en las tablas aportadas)
+- Red municipal: **52.251 alumnos matriculados**, 4.470 profesores, 74 escuelas de fundamental y 73 CMEI (declaración del secretario municipal, mayo de 2026). [MEDIA] Fuente: https://agorarn.com.br/ultimas/natal-quer-ampliar-ensino-integral-para-50-da-rede-em-cinco-anos/
+- El panorama del Todos Pela Educação indica 57.600 estudiantes en 2024 (red municipal directa y concertada, Censo Escolar 2024). [BAJA: problemas de rótulo, ver 2.4]
+- Matrículas totales de Natal por red y etapa en 2025: **no disponibles en esta base**. Consultar QEdu (https://qedu.org.br/municipio/2408102-natal) o la Sinopse Estatística del Censo Escolar 2025 (Inep).
+- Contexto estatal: en 2025 la educación básica de RN tuvo 756.434 matrículas (−3,4 % sobre 2024); la red privada creció un 6,4 %. [MEDIA] Fuente: https://www.gilbertodias.com.br/2026/03/censo-escolar-aponta-queda-das.html
+  - Desglose de RN por red, 2024 → 2025: estadual 196.764 → 182.461; municipales 412.035 → 392.208; privada 157.325 → 167.393. [MEDIA] Misma fuente.
+
+---
+
+## 4B. DOCENTES — CENSO ESCOLAR 2025 [ALTA — Tabela_Docente_2025, con las cautelas de 0.1]
+
+Cobertura: 475 escuelas (las 482 en actividad, menos los 7 centros que solo ofrecen AEE).
+
+### 4B.1 Vínculos docente-escuela por red y etapa (suma de los recuentos de cada escuela)
+
+| Etapa | Federal | Estadual | Municipal | Privada | Pública | Total |
+|---|---|---|---|---|---|---|
+| **Educación básica (total)** | 529 | 2.717 | 2.930 | 4.144 | 6.176 | **10.320** |
+| Educación infantil | 15 | 0 | 921 | 762 | 936 | 1.698 |
+| — Creche | 8 | 0 | 532 | 341 | 540 | 881 |
+| — Pré-escola | 8 | 0 | 424 | 492 | 432 | 924 |
+| Años iniciales | 21 | 496 | 1.093 | 1.483 | 1.610 | 3.093 |
+| Años finales | 0 | 930 | 843 | 1.422 | 1.773 | 3.195 |
+| — Clases de corrección de flujo (AF) | 0 | 49 | 354 | 0 | 403 | 403 |
+| Enseñanza media (total) | 320 | 1.340 | 0 | 1.143 | 1.660 | 2.803 |
+| — Media integrada a la técnica | 320 | 359 | 0 | 12 | 679 | 691 |
+| Educación profesional | 494 | 575 | 0 | 383 | 1.069 | 1.452 |
+| EJA | 23 | 499 | 250 | 47 | 772 | 819 |
+| Educación especial (alumnos en clases comunes) | 481 | 2.569 | 2.615 | 2.842 | 5.665 | 8.507 |
+
+- Media de docentes por escuela: estadual 24,7; federal 66,1; municipal 19,9; privada 19,7.
+- Escuelas con más docentes: IFRN Campus Natal-Central (272), Colégio Marista de Natal (145), Centro de Educação Integrada – Romualdo (110), CEI Mais (94), Colégio Nossa Senhora das Neves (94).
+- Además de los docentes, las escuelas declaran 1.845 auxiliares o asistentes educativos (1.465 en la red municipal), 633 profesionales de apoyo a alumnos con discapacidad (436 en la estadual) y 44 intérpretes de Libras.
+- **Cruce con la SME**: la red municipal declara 4.470 profesores; la tabla da 2.930 docentes + 1.465 auxiliares = 4.395. La cifra de la SME probablemente incluye a los auxiliares (inferencia propia; no confirmada).
+
+### 4B.2 Perfil docente (% sobre los vínculos docente-escuela de cada red)
+
+| Indicador | Estadual | Federal | Municipal | Privada | Pública | Total |
+|---|---|---|---|---|---|---|
+| Con estudios superiores | 98,0 | 99,8 | 99,4 | 80,7 | 98,8 | 91,6 |
+| — con licenciatura (formación de profesor) | 95,9 | 45,2 | 98,9 | 76,8 | 93,0 | 86,5 |
+| Solo enseñanza media | 2,0 | 0,2 | 0,6 | 18,9 | 1,2 | 8,3 |
+| Con especialización | 49,1 | 12,1 | 80,8 | 25,7 | 60,9 | 46,8 |
+| Con maestría | 18,1 | 48,8 | 8,2 | 5,6 | 16,0 | 11,8 |
+| Con doctorado | 4,4 | 48,8 | 1,3 | 0,7 | 6,7 | 4,3 |
+| Sin posgrado | 32,5 | 2,1 | 14,3 | 49,8 | 21,2 | 32,7 |
+| Mujeres | 50,8 | 38,2 | 76,8 | 64,4 | 62,1 | 63,0 |
+| Menores de 30 años | 1,5 | 2,6 | 1,7 | 18,4 | 1,7 | 8,4 |
+| 30-49 años | 65,7 | 56,0 | 56,3 | 64,4 | 60,4 | 62,0 |
+| 50 años o más | 32,8 | 41,4 | 42,0 | 17,2 | 37,9 | 29,6 |
+| Funcionario (concursado) | 71,4 | 89,2 | 58,0 | — | 66,5 | — |
+| Contrato temporal | 29,8 | 11,0 | 42,0 | — | 34,0 | — |
+| Sin formación continuada específica declarada | 56,4 | 80,2 | 25,7 | 66,4 | 43,9 | 52,9 |
+
+Notas:
+- Las categorías de posgrado se solapan (un docente puede tener especialización y maestría).
+- El vínculo (concursado/contratado/terceirizado) solo se declara en la red pública; hay 29 vínculos terceirizados en la red municipal. Las categorías pueden solaparse ligeramente (la suma supera el total en cada red).
+- Color/raza (total): blanca 27,6 %; parda 26,6 %; amarilla 6,5 %; negra 3,9 %; indígena 0,1 %; no declarada 35,3 %. En la red estadual, "amarilla" llega al 17,2 %, una proporción atípica para Brasil. Probable problema de declaración: usar con cautela [BAJA en la interpretación].
+- Docentes con discapacidad: 57.
+- La baja proporción de licenciados en la red federal se explica por el perfil de profesores de áreas técnicas (bachilleres e ingenieros) del IFRN y la UFRN (inferencia propia).
+
+---
+
+## 5. REDES DE ENSEÑANZA
+
+### 5.1 Red municipal (Prefeitura do Natal — Secretaria Municipal de Educação, SME)
+- Secretario municipal de Educación: **Aldo Fernandes** (en el cargo desde 2025). [MEDIA] Fuente: https://agorarn.com.br/ultimas/natal-quer-ampliar-ensino-integral-para-50-da-rede-em-cinco-anos/
+- Escuelas municipales en actividad: 147 (74 CMEI y 73 escuelas, según la tabla; ver 4.1). [ALTA]
+- Alumnos: 52.251; profesores: 4.470 (declaración de la SME, mayo de 2026). [MEDIA]
+- Objetivos y políticas declaradas (prensa, 2025-2026) [MEDIA]:
+  - Ampliar la jornada completa (tempo integral) al 50 % de la red en cinco años.
+  - Frecuencia escolar mínima de la red: de 75 % a 86,6 % (afirmación del secretario).
+  - Observatorio de indicadores creado en el segundo semestre de 2025.
+  - Meta de construir 30 nuevas unidades, con prioridad para creche y preescolar. Fuente: https://agorarn.com.br/natal/natal-ampliacao-da-rede-melhorar-educacao/
+  - La Prefeitura afirma haber acabado con la fila de espera para creches en 2025 (fuente institucional reproducida por la prensa). Fuente: https://agorarn.com.br/?p=983115
+- Programas o políticas sin cifras verificadas: climatización de escuelas, robótica y educación digital (declaraciones de la SME).
+- Sitio oficial: https://www.natal.rn.gov.br (SME).
+
+### 5.2 Red estadual (Secretaria de Estado da Educação, da Cultura, do Esporte e do Lazer — SEEC)
+- Natal pertenece a la **1.ª DIREC**, que según el secretario municipal incluye también São Gonçalo do Amarante, Extremoz y Macaíba. [MEDIA] Fuente: https://agorarn.com.br/ultimas/natal-quer-ampliar-ensino-integral-para-50-da-rede-em-cinco-anos/
+- Escuelas estaduales en Natal en actividad: 113 (110 con docentes y 3 centros solo de AEE). [ALTA]
+- Oferta profesional estadual destacada (tabla): CEEP Professor João Faustino Ferreira Neto, Centro Estadual de Educação Profissional Professora Djanira Brasilino de Souza, Instituto Estadual de Educação Profissional, Tecnologia e Inovação (IERN) – Natal, CENEP Senador Jessé Pinto Freire y E.E. Governador Walfredo Gurgel (media de jornada completa y técnica); 21 escuelas estaduales ofrecen media integrada. [ALTA]
+- Matrícula estadual en RN mediante el sistema SIGEduc (https://www.sigeduc.rn.gov.br). [MEDIA]
+- **IFESP – Instituto de Educação Superior Presidente Kennedy**: institución estadual de enseñanza superior con sede en Natal, dedicada a la formación de profesores (grado y posgrado lato sensu para profesionales de la SEEC). [MEDIA] Fuente: https://ifesp.edu.br
+
+### 5.3 Red federal (8 escuelas de educación básica en el Censo 2025) [ALTA — tabla]
+- IFRN Campus Natal-Central (media integrada y técnicos).
+- IFRN Campus Natal-Cidade Alta (en documentos del IFRN de 2025-2026 aparece como **Natal-Centro Histórico**; ver sección 9).
+- IFRN Campus Natal-Zona Norte (media integrada, técnicos y EJA).
+- IFRN Campus Avançado Natal-Zona Leste (técnicos, EaD).
+- UFRN – Escola de Saúde (técnicos, EaD).
+- UFRN – Escola de Música (técnicos).
+- UFRN – Instituto Metrópole Digital (IMD) (técnicos en TI, EaD).
+- UFRN – Núcleo de Educação da Infância (NEI-CAp) (creche, pré-escola y años iniciales).
+
+### 5.4 Red privada
+- 214 escuelas en actividad, con presencia mayoritaria en todas las etapas por número de escuelas (ver 4.2). [ALTA]
+- Ejemplos con más docentes (tabla): Colégio Marista de Natal, Centro de Educação Integrada (unidades Romualdo y Roberto Freire), CEI Mais, Colégio Nossa Senhora das Neves, Colégio Salesiano São José, Noilde Ramalho, Complexo Educacional Henrique Castriciano, FACEX, Colégio Porto, Colégio Hipócrates Zona Sul. [ALTA, nombres tal como figuran en el Censo]
+- Educación profesional privada (tabla): SENAI (CTGÁS – Centro de Tecnologias do Gás; Centro Clóvis Motta), SENAC (Centro, Alecrim, Zona Norte, Barreira Roxa), SEST SENAT, CEPRN, Escola Técnica Potiguar, ITB, Grau Técnico, Escola Politécnica do Nordeste, Escola de Formação Profissional Ana Neri, CTécnica, Escola Estácio Alexandrino. [ALTA]
+
+---
+
+## 6. ENSEÑANZA SUPERIOR
+
+### 6.1 UFRN — Universidade Federal do Rio Grande do Norte (sede en Natal)
+- Campus principal: Campus Universitário Lagoa Nova (Natal). La UFRN tiene además unidades fuera de Natal, que quedan fuera del alcance de esta base. [ALTA]
+- Rector: José Daniel Diniz Melo. [MEDIA] Fuente: https://portaln10.com.br/brasil/cursos-de-licenciatura-da-ufrn-alcancam-resultado-de-excelencia-no-enade-338211/
+- Tamaño (fuentes secundarias, sin cifra oficial de 2025 localizada): más de 43.000 estudiantes de grado y posgrado. [BAJA-MEDIA] Fuente: https://vestibulares.estrategia.com/portal/enem-e-vestibulares/ufrn-sisu-cursos-vagas-como-ingressar-e-muito-mais/
+- 110 grados con oferta regular (en Natal y el interior) y más de 20 cursos técnicos (Natal y Macaíba), según la Mostra de Profissões 2026. [MEDIA] Fuente: https://portaln10.com.br/educacao/ensino-superior/mostra-profissoes-ufrn-2026-natal-352418/
+- 89 programas de posgrado stricto sensu (documento de metas del PDI). [ALTA] Fuente: https://www.ufrn.br/resources/documentos/planodegestao/Alinhamento_PDI_Novas_metas-Plano_de_Gestao_2023-2027.pdf
+- Metas del PDI 2025-2029: superar el 68 % de grados con nota 4 o 5 en el ENADE en 2025 y llegar al 80 % en 2029; elevar la tasa de éxito en grado del 47 % (2023) al 62 % (2029). [ALTA] Misma fuente.
+- Nuevos grados en el campus Natal desde 2025: Engenharia de Energia (40 plazas por SISU) e Inteligência Artificial (40 plazas por reingreso específico). [MEDIA] Fuente: https://agorarn.com.br/ultimas/ufrn-anuncia-cursos-graduacao-2025-confira/
+- SISU 2025: 7.231 plazas en total en la UFRN; Medicina sumó 30 plazas (20 en Natal). [MEDIA] Fuente: https://agorarn.com.br/?p=906933
+- EaD: 1.842 estudiantes en grados a distancia (nueve licenciaturas y un bachillerato) y 1.055 en posgrado lato sensu (Censo de la Educación Superior 2024). [MEDIA] Fuente: https://agorarn.com.br/ultimas/ead-supera-presencial-principal-acesso-a-educacao-superior/
+- Datos abiertos (discentes, cursos, docentes): https://dados.ufrn.br
+
+### 6.2 UERN — Campus Avançado de Natal (CAN)
+- Grados del campus de Natal en la lista oficial de la UERN (2025): **Ciencias de la Religión (Licenciatura), Derecho (Bacharelado), Turismo (Bacharelado), Ciencia de la Computación (Bacharelado), Ciencia y Tecnología (Bacharelado)**. [ALTA] Fuente: https://portal.uern.br/proeg/wp-content/uploads/2025/09/ANEXO-I-LISTA-DOS-CURSOS-DE-GRADUACAO.pdf
+- El primer campus de la UERN en la capital se abrió en 2002. [MEDIA] Fuente: https://tribunadonorte.com.br/?p=37936
+- Posgrado lato sensu aprobado para departamentos del campus de Natal: Direito Previdenciário, Turismo Literatura e Cultura, Administração Hoteleira, Desenvolvimento de Aplicações para Dispositivos Móveis; además, "Gestão Pública – Natal" (departamento del Campus Central). Vigencia actual no verificada. [MEDIA] Fuente: https://portal.uern.br/propeg/wp-content/uploads/2026/08/CURSOS-APROVADOS-PELO-CONSEPE.pdf
+- Contexto institucional: la UERN en su conjunto tiene 6 campus, 22 polos EaD, 66 grados y 43 posgrados, y 14.280 estudiantes. [MEDIA] Fuente: https://agorarn.com.br/ultimas/com-109-cursos-e-14-mil-alunos-uern-custara-r-500-mi-este-ano/
+
+### 6.3 IFRN — cursos superiores en Natal
+- Ejemplos de grados ofertados en procesos de 2026 [MEDIA]:
+  - Natal-Central: Tecnología en Gestión Ambiental, Tecnología en Gestión Pública.
+  - Natal-Centro Histórico: Licenciatura en Educación Física.
+  - Natal-Zona Norte: Tecnología en Marketing.
+  - Natal-Zona Leste: grados a distancia (EaD) con polos en Natal (Tirol), Currais Novos y João Câmara.
+  Fuentes: https://agorarn.com.br/ultimas/ifrn-oferece-258-vagas-em-cursos-superiores-com-selecao-por-notas-do-enem/ y https://agorarn.com.br/?p=1037413
+- Oferta completa de grados del IFRN en Natal: no compilada; consultar https://portal.ifrn.edu.br
+
+### 6.4 Instituciones privadas de enseñanza superior (selección; no exhaustiva)
+- **Universidade Potiguar (UnP)**: en funcionamiento desde 1981, con sede en Natal. [ALTA, documento institucional] Fuente: https://unp.br/wp-content/uploads/2025/02/PPC_R_2025-01-21_Geografia_Lic_UNP_EAD.pdf
+- **UNI-RN – Centro Universitário do Rio Grande do Norte** (Liga de Ensino do RN): comenzó en enseñanza superior en 1997 como FARN; centro universitario desde 2012. [MEDIA] Fuente: https://www.pravaler.com.br/faculdades/unirn/
+- **UNIFACEX – Centro Universitário FACEX** (Capim Macio). [MEDIA]
+- **Estácio Natal**: parecer CNE/CES n.º 311/2025 sobre su acreditación como Centro Universitário (homologación final no verificada). [MEDIA] Fuente: https://www.gov.br/mec/pt-br/cne/2025/maio-2025/pces311_25.pdf
+- **Uninassau Natal** (Faculdade Uninassau Natal; en 2017 había solicitado la acreditación como centro universitario; situación actual no verificada). [BAJA]
+- Listado oficial y completo: consultar el portal e-MEC (https://emec.mec.gov.br).
+
+---
+
+## 7. EDUCACIÓN PROFESIONAL Y TÉCNICA
+
+### 7.1 IFRN (red federal) — campus en Natal
+- Origen: Escola Industrial de Natal (1942) → ETFRN (1968) → CEFET (1999) → IFRN (2008). [MEDIA] Fuente: https://tribunadonorte.com.br/?p=582404
+- Técnicos subsecuentes (para quien ya terminó la media) ofertados en 2026 [MEDIA]:
+  - Natal-Central: Eletrotécnica, Mecânica, Petróleo e Gás, Edificações. En ediciones anteriores (2023) también Geologia, Mineração y Segurança do Trabalho.
+  - Natal-Centro Histórico: Eventos, Guia de Turismo, Produção de Áudio e Vídeo.
+  - Natal-Zona Norte: Manutenção e Suporte em Informática.
+  Fuentes: https://agorarn.com.br/?p=1017723 ; https://agorarn.com.br/?p=974783 ; https://funcern.br/documents/892/Concorrencia_Edital_24-2023_Tecnico_Subsequente_2023.2.pdf
+- Proceso para ingreso en 2027: 828 plazas en cursos técnicos gratuitos en varios campus, entre ellos Natal-Central, Natal-Centro Histórico y Natal-Zona Norte. [MEDIA] Fuente: https://agorarn.com.br/?p=2407028
+- Censo 2025 (tabla): los tres campus "plenos" de Natal (Central, Cidade Alta/Centro Histórico y Zona Norte) ofrecen media integrada a la técnica y técnicos; Zona Norte también EJA; Zona Leste solo técnicos, incluida la EaD. [ALTA]
+- Matrículas del IFRN en Natal: no disponibles en esta base.
+
+### 7.2 UFRN — escuelas técnicas
+- Escola de Saúde, Escola de Música e Instituto Metrópole Digital ofrecen cursos técnicos (Escola de Saúde e IMD también a distancia). [ALTA — tabla]
+
+### 7.3 Red estadual y Sistema S
+- Ver 5.2 (CEEP, IERN, CENEP) y 5.4 (SENAI, SENAC, SEST SENAT).
+- En el Censo 2025, 25 escuelas estaduales y 12 privadas declaran itinerario técnico-profesional en la nueva enseñanza media. [ALTA — tabla]
+
+---
+
+## 8. CONTEXTO ESTATAL Y REGIONAL
+
+- RN tuvo en 2025 la mayor subida del Ideb del país y los mejores resultados de su serie histórica, pero sigue por debajo de las medias nacionales. [MEDIA] Fuente: https://agorarn.com.br/ultimas/ideb-do-rn-registra-maior-alta-do-pais/
+- RN quedó último entre los estados en el ICA 2025 (48 %). [MEDIA]
+- En el Ideb 2025 (años iniciales, red municipal), Natal (4,8) quedó por debajo de la media de las redes municipales de Brasil (6,1) y en la última posición entre las capitales. [MEDIA]
+- La fiabilidad del Ideb estatal de enseñanza media generó debate: la SEEC niega que una política de aprobación con asignaturas pendientes inflara el indicador (afirma que afectó al 0,35 % de los concluyentes). [MEDIA] Fuente: https://agorarn.com.br/?p=1037868
+
+---
+
+## 9. DISCREPANCIAS E INCONSISTENCIAS DETECTADAS (no resueltas)
+El agente NUNCA debe presentar estas divergencias como datos homogéneos:
+
+1. **Ideb 2023, años finales**: 3,3 (Agora RN, red municipal) frente a 3,4 (Agora RN, otra nota, red no especificada; meta 4,9). Probablemente redes distintas (municipal frente a pública). No resuelto.
+2. **ICA de Natal en 2023**: una noticia de 2024 cita 34 % de alfabetizados en 2023; la noticia de abril de 2026 afirma que Natal no tuvo ICA publicado en 2023 ni en 2024 por baja participación. Posible confusión con un resultado preliminar o con otra evaluación. No usar el 34 % como dato oficial.
+3. **Composición de la red municipal**: la SME habla de 74 escuelas de fundamental y 73 CMEI; en la tabla hay 74 nombres "CMEI" y 73 "ESC". El total (147) coincide; el reparto depende del criterio.
+4. **Profesores municipales**: 4.470 (SME) frente a 2.930 docentes en la tabla. La diferencia casi coincide con los 1.465 auxiliares (ver 4B.1). Además, la tabla cuenta vínculos docente-escuela, no personas.
+5. **Nombre de un campus del IFRN**: el Censo 2025 dice "Natal-Cidade Alta"; los editales del IFRN de 2025-2026 dicen "Natal-Centro Histórico". Probablemente es el mismo campus renombrado (inferencia; no confirmado en fuente oficial).
+6. **Ideb 2025 de la enseñanza media estadual de RN**: 3,9 (Descomplica) frente a 4,0 (columna de Agora RN). Redondeo o red distinta. No resuelto.
+7. **UERN Natal**: un portal informativo (Portal N10) atribuye al campus de Natal grados de Ciências Contábeis, Geografia y Enfermagem que **no** figuran en la lista oficial de la UERN de 2025. Usar la lista oficial (6.2).
+8. **Tamaño de la UFRN**: las cifras circulantes (36.000, 43.000 o "más de 29.000" estudiantes; 78, 82, 110 o 130 grados) proceden de agregadores con fechas distintas. No hay cifra oficial de 2025 en esta base.
+9. **Panorama del Todos Pela Educação**: el PDF de Natal lleva la cabecera de Joinville; sus cifras (distorsión edad-curso, 57.600 estudiantes) tienen confianza baja.
+10. **Color/raza de los docentes estaduales**: un 17,2 % de "amarilla" es atípico; posible error de registro.
+
+---
+
+## 10. DATOS NO ENCONTRADOS (lagunas)
+Si preguntan por estos puntos, responde "no disponible en esta base" y orienta hacia las fuentes de la sección 12:
+
+- Matrículas de 2025 por red y etapa para el conjunto de Natal (la tabla de matrículas del Censo no se aportó; QEdu no se pudo leer).
+- Ideb 2025 de la enseñanza media y de la red estadual en Natal; Ideb por escuela; proficiencias Saeb 2025.
+- Ideb 2023 de la "red pública" según IBGE Cidades (el portal no se pudo abrir).
+- Número de docentes únicos (Sinopse Estatística del Inep).
+- Tasas de aprobación, reprobación y abandono recientes; Enem por escuela.
+- Plan Municipal de Educación (PME) vigente de Natal: no localizado.
+- IDHM-Educación de Natal (solo se obtuvo el IDHM global de 2010: 0,763).
+- Presupuesto educativo municipal y gasto por alumno.
+- Cifras oficiales de 2025 de la UFRN (estudiantes, docentes), matrículas del IFRN en Natal y de la UERN-Natal; datos por municipio del Censo de la Educación Superior.
+- Porcentaje de alumnos en jornada completa (tempo integral) en Natal.
+- Transporte escolar, alimentación escolar (cobertura y gasto) y educación inclusiva con datos de alumnos.
+
+---
+
+## 11. GLOSARIO
+
+- **Ideb**: Índice de Desenvolvimento da Educação Básica (0-10), bienal; combina Saeb y aprobación.
+- **Saeb**: Sistema de Avaliação da Educação Básica (pruebas en 2.º, 5.º y 9.º año de fundamental y 3.º de media; el Ideb usa 5.º, 9.º y 3.º).
+- **Censo Escolar**: recogida anual del Inep con escuelas, matrículas, docentes y gestores.
+- **ICA**: Indicador Criança Alfabetizada (2.º año de fundamental; criterio: 743 puntos en la escala Saeb).
+- **Anos iniciais / finais**: 1.º-5.º / 6.º-9.º año del Ensino Fundamental.
+- **Ensino Médio**: enseñanza media (3 años; 4 en la media integrada del IFRN).
+- **Médio integrado**: enseñanza media integrada a un curso técnico.
+- **Técnico subsequente / concomitante**: curso técnico posterior a la media / cursado en paralelo a ella.
+- **FIC**: Formação Inicial e Continuada (cualificación profesional corta).
+- **EJA**: Educação de Jovens e Adultos.
+- **AEE**: Atendimento Educacional Especializado (educación especial complementaria).
+- **Creche / Pré-escola**: educación infantil 0-3 años / 4-5 años.
+- **CMEI**: Centro Municipal de Educação Infantil.
+- **Correção de fluxo**: clases para alumnos con desfase edad-curso.
+- **DIREC**: Diretoria Regional de Educação e Cultura (administración regional de la red estatal); Natal pertenece a la 1.ª.
+- **SME**: Secretaria Municipal de Educação (Natal). **SEEC**: Secretaria de Estado da Educação, da Cultura, do Esporte e do Lazer (RN).
+- **Fundeb / VAAR**: fondo de financiación de la educación básica / complementación condicionada a resultados y reducción de desigualdades.
+- **UFRN**: Universidade Federal do Rio Grande do Norte. **UERN**: Universidade do Estado do Rio Grande do Norte (CAN = Campus Avançado de Natal). **IFRN**: Instituto Federal do Rio Grande do Norte. **IFESP**: Instituto de Educação Superior Presidente Kennedy. **IMD**: Instituto Metrópole Digital (UFRN). **NEI-CAp**: Núcleo de Educação da Infância (UFRN).
+- **Enem**: Exame Nacional do Ensino Médio; su nota se usa para el ingreso a las universidades públicas vía SISU.
+- **SISU**: Sistema de Seleção Unificada (ingreso a universidades públicas con la nota del Enem).
+- **CNCA**: Compromisso Nacional Criança Alfabetizada (programa del MEC vinculado al ICA; ver sección 3.2).
+- **G46**: grupo de comparación del Todos Pela Educação (capitales y municipios de más de 500.000 habitantes).
+
+---
+
+## 12. FUENTES PRIMARIAS PARA CONSULTA EN VIVO (recomendado al agente)
+
+- IBGE Cidades (Natal): https://cidades.ibge.gov.br/brasil/rn/natal/panorama y https://www.ibge.gov.br/cidades-e-estados/rn/natal.html
+- IBGE SIDRA (Censo 2022): https://sidra.ibge.gov.br
+- Inep — Ideb y Saeb 2025: https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb
+- Nota informativa Ideb 2025: https://download.inep.gov.br/ideb/resultados/nota_informativa_ideb_2025.pdf
+- Inep — Censo Escolar (microdatos, sinopsis): https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/censo-escolar
+- QEdu (Natal): https://qedu.org.br/municipio/2408102-natal
+- MEC — Compromisso Nacional Criança Alfabetizada: https://www.gov.br/mec/pt-br/crianca-alfabetizada
+- Prefeitura do Natal / SME: https://www.natal.rn.gov.br
+- SEEC-RN / SIGEduc: https://www.sigeduc.rn.gov.br
+- UFRN: https://www.ufrn.br | Datos abiertos: https://dados.ufrn.br
+- UERN: https://portal.uern.br
+- IFRN: https://portal.ifrn.edu.br
+- IFESP: https://ifesp.edu.br
+- e-MEC (instituciones de enseñanza superior): https://emec.mec.gov.br
+
+---
+
+## 13. REGISTRO DE FUENTES CONSULTADAS (por orden de uso)
+
+1. Tabela_Escola_2025_V2 y Tabela_Docente_2025_V2 (Censo Escolar 2025, Natal; aportadas por el usuario; leídas completas)
+2. https://www.ibge.gov.br/cidades-e-estados/rn/natal.html (fragmentos)
+3. https://www.ibge.gov.br/cidades-e-estados.html?c=2408102 (fragmento)
+4. https://agorarn.com.br/ultimas/evasao-em-natal-nao-e-exclusividade-do-rn/
+5. https://www.brasildefato.com.br/2023/08/31/dinamicas-demograficas-e-imobiliarias-os-primeiros-dados-do-censo-2022-para-a-regiao-metropolitana-de-natal
+6. https://agorarn.com.br/?p=980597
+7. https://agorarn.com.br/?p=1038007
+8. https://agorarn.com.br/coluna/ideb-e-hora-de-entender-os-numeros/
+9. https://portaldeprefeitura.com.br/cotidiano/ideb-2025-confira-o-ranking-geral-das-capitais-brasileiras-na/628957/
+10. https://portaldeprefeitura.com.br/pernambuco/ideb-2025-recife-fica-atras-de-teresina-fortaleza-sao-luis-e/629015/
+11. https://agorarn.com.br/ultimas/ideb-de-mossoro-dispara-e-municipio-lidera/
+12. https://agorarn.com.br/politica/alvaro-admite-que-ideb-natal-deixou-desejar/
+13. https://agorarn.com.br/ultimas/ideb-de-mossoro-alcanca-uma-das-maior-nota-do-rn/
+14. https://agorarn.com.br/?p=913547
+15. https://agorarn.com.br/ultimas/ideb-do-rn-registra-maior-alta-do-pais/
+16. https://descomplica.com.br/blog/ideb-alta-rn-o-que-muda-vestibular-2/
+17. https://www.metropoles.com/brasil/ideb-aponta-que-so-anos-iniciais-superam-meta-nacional-da-educacao
+18. https://www.cnnbrasil.com.br/educacao/ideb-ensino-basico-tem-recorde-fundamental-2-e-medio-nao-alcancam-meta/
+19. https://agorarn.com.br/?p=1037868
+20. https://jornaldebrasilia.com.br/noticias/brasil/veja-os-melhores-e-os-piores-municipios-brasileiros-em-alfabetizacao-segundo-o-censo-2022/
+21. https://nada.ibge.gov.br/en/agencia-news/40118-2022-census-illiteracy-rate-falls-from-9-6-to-7-0-in-12-years-though-inequalities-persist.html?lang=en-GB
+22. https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-denoticias/40098-censo-2022-taxa-de-analfabetismo-cai-de-9-6-para-7-0-em-12-anos-mas-desifualdades-persistem
+23. https://agorarn.com.br/?p=1006675 (leída completa)
+24. https://agorarn.com.br/?p=896788
+25. https://www.gov.br/mec/pt-br/crianca-alfabetizada/monitoramento-e-avaliacao/rn_ica2024.pdf
+26. https://portaln10.com.br/brasil/rn-termina-2025-em-ultimo-no-ranking-de-alfabetizacao-mesmo-com-avanco-no-indicador-325558/
+27. https://todospelaeducacao.org.br/wordpress/wp-content/uploads/2025/12/panorama-educacional-natal-rn.pdf (leído; contenido ambiguo)
+28. https://agorarn.com.br/ultimas/natal-quer-ampliar-ensino-integral-para-50-da-rede-em-cinco-anos/
+29. https://agorarn.com.br/natal/natal-ampliacao-da-rede-melhorar-educacao/
+30. https://agorarn.com.br/?p=983115
+31. https://www.gilbertodias.com.br/2026/03/censo-escolar-aponta-queda-das.html
+32. https://www.ufrn.br/resources/documentos/planodegestao/Alinhamento_PDI_Novas_metas-Plano_de_Gestao_2023-2027.pdf
+33. https://portaln10.com.br/educacao/ensino-superior/mostra-profissoes-ufrn-2026-natal-352418/
+34. https://portaln10.com.br/brasil/cursos-de-licenciatura-da-ufrn-alcancam-resultado-de-excelencia-no-enade-338211/
+35. https://vestibulares.estrategia.com/portal/enem-e-vestibulares/ufrn-sisu-cursos-vagas-como-ingressar-e-muito-mais/
+36. https://agorarn.com.br/ultimas/ufrn-anuncia-cursos-graduacao-2025-confira/
+37. https://agorarn.com.br/?p=906933
+38. https://agorarn.com.br/ultimas/ead-supera-presencial-principal-acesso-a-educacao-superior/
+39. https://portal.uern.br/proeg/wp-content/uploads/2025/09/ANEXO-I-LISTA-DOS-CURSOS-DE-GRADUACAO.pdf (leída)
+40. https://tribunadonorte.com.br/?p=37936
+41. https://portal.uern.br/propeg/wp-content/uploads/2026/08/CURSOS-APROVADOS-PELO-CONSEPE.pdf
+42. https://agorarn.com.br/ultimas/com-109-cursos-e-14-mil-alunos-uern-custara-r-500-mi-este-ano/
+43. https://agorarn.com.br/ultimas/ifrn-oferece-258-vagas-em-cursos-superiores-com-selecao-por-notas-do-enem/
+44. https://agorarn.com.br/?p=1037413
+45. https://agorarn.com.br/?p=1017723
+46. https://agorarn.com.br/?p=974783
+47. https://agorarn.com.br/?p=2407028
+48. https://funcern.br/documents/892/Concorrencia_Edital_24-2023_Tecnico_Subsequente_2023.2.pdf
+49. https://tribunadonorte.com.br/?p=582404
+50. https://unp.br/wp-content/uploads/2025/02/PPC_R_2025-01-21_Geografia_Lic_UNP_EAD.pdf
+51. https://www.pravaler.com.br/faculdades/unirn/
+52. https://www.gov.br/mec/pt-br/cne/2025/maio-2025/pces311_25.pdf
+53. https://www.gov.br/mec/pt-br/cne/pdf/pareceres-do-cne/ces/2017/pces437_17.pdf
+54. https://ifesp.edu.br (documentos institucionales)
+
+## 14. CONTACTOS OFICIALES [VERIFICAR ANTES DE PUBLICAR]
+- Secretaria Municipal de Educação (SME) de Natal: sitio oficial https://www.natal.rn.gov.br (sección Educação). [VERIFICAR: dirección, teléfono y horario de atención]
+- 1.ª DIREC (SEEC-RN): [VERIFICAR: dirección y teléfono]
+- IFRN Campus Natal-Central: portal https://portal.ifrn.edu.br [VERIFICAR: dirección y teléfono del campus]
+- UFRN — Campus Universitário Lagoa Nova: https://www.ufrn.br [VERIFICAR: teléfono de información]
+- UERN — Campus Avançado de Natal (CAN): https://portal.uern.br [VERIFICAR: dirección y teléfono]
+- Prefeitura do Natal: https://www.natal.rn.gov.br [VERIFICAR: teléfono de la ouvidoría]
+
+---
+
+## 15. PROTOCOLO DE ACTUALIZACIÓN DE ESTA BASE
+- Responsable de la actualización: [VERIFICAR: nombre/órgano].
+- Hacer una nueva compilación con cada: divulgación del Ideb (bienal, agosto), Censo Escolar (anual), ICA (anual), convocatorias de matrícula (anuales) y cambios de cursos en las instituciones de enseñanza superior.
+- Al actualizar: revisar las secciones 9 y 10, fechar la cabecera (sección 0) y mantener las etiquetas de confianza.
+
+---
+
+*Fin del documento.*
