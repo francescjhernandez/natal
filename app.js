@@ -1,36 +1,36 @@
 "use strict";
 /* ============================================================
-   INFORMADOR DE CAICÓ · CIDADE EDUCADORA (RN, BRASIL)
+   INFORMADOR DE NATAL · CIDADE EDUCADORA (RN, BRASIL)
    Front-end trilíngue (pt-BR / es / en), com voz (Web Speech API),
    letra ampliável, PWA instalável e registro automático das
    perguntas no Worker da Cloudflare.
    ============================================================ */
 
 /* >>> URL do Worker da Cloudflare <<< */
-const API_URL = "https://caico.francesc-j-hernandez.workers.dev/api/chat";
+const API_URL = "https://natal.francesc-j-hernandez.workers.dev/api/chat";
 /* Em local (wrangler dev): http://127.0.0.1:8787/api/chat */
 
 /* ---------- Idiomas ---------- */
 const I18N = {
   pt:{nom:"Português (BR)", nomAuto:"Português", bcp:"pt-BR", bcpVeu:"pt-BR",
-      lema:"A oferta educacional de Caicó em 3 idiomas — porque aprender ao longo da vida é um direito.",
-      benvinguda:"Sou o Informador de Caicó, Cidade Educadora (RN).🎓\nPergunte-me sobre a oferta educacional da cidade: creches, escolas municipais e estaduais, IFRN Campus Caicó, cursos técnicos, Educação de Jovens e Adultos (EJA), bolsas e transporte escolar… Escreva ou use o botão de voz.",
+      lema:"A oferta educacional de Natal em 3 idiomas — porque aprender ao longo da vida é um direito.",
+      benvinguda:"Sou o Informador de Natal, Cidade Educadora (RN).🎓\nPergunte-me sobre a oferta educacional da cidade: creches, escolas municipais e estaduais, IFRN, cursos técnicos, Educação de Jovens e Adultos (EJA), bolsas e transporte escolar… Escreva ou use o botão de voz.",
       ph:"Escreva sua pergunta…", envia:"Enviar", micro:"Ditar por voz",
       escolta:"Ouvir", para:"Parar", pensant:"Pensando…",
       errConn:"Não foi possível contatar o servidor. Sua pergunta fica guardada e será enviada quando a conexão voltar.",
       instal:"Instalar app", fontMenys:"Diminuir a letra", fontMes:"Aumentar a letra", fontReset:"Letra normal",
       escoltant:"Estou ouvindo… fale agora", cues:"Pergunta guardada para envio posterior"},
   es:{nom:"Español", nomAuto:"Español", bcp:"es", bcpVeu:"es",
-      lema:"La oferta educativa de Caicó en 3 idiomas — porque aprender a lo largo de la vida es un derecho.",
-      benvinguda:"Soy el Informador de Caicó, Ciudad Educadora (RN).🎓\nPregúntame sobre la oferta educativa de la ciudad: guarderías, escuelas municipales y estatales, IFRN Campus Caicó, cursos técnicos, Educación de Jóvenes y Adultos, becas y transporte escolar… Escribe o usa el botón de voz.",
+      lema:"La oferta educativa de Natal en 3 idiomas — porque aprender a lo largo de la vida es un derecho.",
+      benvinguda:"Soy el Informador de Natal, Ciudad Educadora (RN).🎓\nPregúntame sobre la oferta educativa de la ciudad: guarderías, escuelas municipales y estatales, IFRN, cursos técnicos, Educación de Jóvenes y Adultos, becas y transporte escolar… Escribe o usa el botón de voz.",
       ph:"Escribe tu pregunta…", envia:"Enviar", micro:"Dictar por voz",
       escolta:"Escuchar", para:"Parar", pensant:"Pensando…",
       errConn:"No he podido contactar con el servidor. Tu pregunta queda guardada y se enviará cuando vuelva la conexión.",
       instal:"Instalar app", fontMenys:"Reducir la letra", fontMes:"Ampliar la letra", fontReset:"Letra normal",
       escoltant:"Te escucho… habla ahora", cues:"Pregunta guardada para enviar más tarde"},
   en:{nom:"English", nomAuto:"English", bcp:"en", bcpVeu:"en-US",
-      lema:"Caicó's education offer in 3 languages — because lifelong learning is a right.",
-      benvinguda:"I am the Caicó Informer, Educating City (RN, Brazil).🎓\nAsk me about the city's education offer: nursery schools, municipal and state schools, IFRN Caicó Campus, technical courses, youth and adult education (EJA), scholarships and school transport… Type or use the voice button.",
+      lema:"Natal's education offer in 3 languages — because lifelong learning is a right.",
+      benvinguda:"I am the Natal Informer, Educating City (RN, Brazil).🎓\nAsk me about the city's education offer: nursery schools, municipal and state schools, IFRN, technical courses, youth and adult education (EJA), scholarships and school transport… Type or use the voice button.",
       ph:"Type your question…", envia:"Send", micro:"Dictate by voice",
       escolta:"Listen", para:"Stop", pensant:"Thinking…",
       errConn:"Could not reach the server. Your question is saved and will be sent when the connection returns.",
